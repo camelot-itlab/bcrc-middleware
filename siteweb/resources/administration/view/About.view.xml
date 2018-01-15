@@ -1,0 +1,10 @@
+<mvc:View controllerName="camelot.smartcontract.administration.controller.About" xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">	
+		<Page title="Administration" showHeader="true" enableScrolling="false">
+			<content>
+            	<MessageStrip type="Info" showIcon="true"
+			        text="Welcome to Camelot Hypertrust Network! This section allows you to bootstrap a new Ethereum network or extend an existing Ethereum network!"/>
+				<TextArea value="" growing="true" width="100%"/>
+			</content>
+		</Page>		
+</mvc:View>

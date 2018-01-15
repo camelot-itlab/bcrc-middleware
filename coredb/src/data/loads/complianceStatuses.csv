@@ -1,0 +1,11 @@
+ID,Description
+PRES,Pending Response
+AT,Above Threshold
+BT,Below Threshold
+NR,New/Changed Regulation
+NC,Need for Collaboration
+PSR,Pending Supplier Requests
+ALLOK,All Regulations Satisfied
+NOTOK,One or more Regulations Violated
+COMPU,Composition List Updated
+UNKNOWN,Unkown

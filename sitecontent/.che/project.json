@@ -1,0 +1,17 @@
+{
+	"type": "sitecontent",
+	"builders": {
+		"default": "sitecontent",
+		"configs": {}
+	},
+	"runners": {
+		"default": "system:/sap.site.content.deployer/default",
+		"configs": {}
+	},
+	"attributes": {
+		"sap.watt.common.setting": [
+			"{\"generation\":[{\"templateId\":\"flpproject.monolitic.sitecontent\",\"templateVersion\":\"1.0.0\",\"dateTimeStamp\":\"Wed, 10 Jan 2018 17:16:59 GMT\"}],\"basevalidator\":{\"services\":{\"xml\":\"xmlValidator\",\"js\":\"jsValidator\"}}}"
+		]
+	},
+	"mixinTypes": ["mtamodule"]
+}

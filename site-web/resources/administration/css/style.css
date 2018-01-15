@@ -1,0 +1,15 @@
+/* Enter your custom styles here */
+
+.sapMShellCentralBox {
+    width: 100% !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+}
+
+.stateBoxUp input {
+     background-color: greenyellow;
+}
+
+.stateBoxDown input {
+     background-color: red;
+}

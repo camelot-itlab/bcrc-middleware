@@ -1,0 +1,171 @@
+{
+	"_version": "1.5.0",
+	"start_url": "start.html",
+	"sap.app": {
+		"id": "com.sap.ipdci.bcrc.rcDashboard",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.2.2"
+		},
+		"title": "{{app_title}}",
+		"description": "{{app_description}}",
+		"ach": "sap",
+		"resources": "resources.json",
+		"dataSources": {
+			"data": {
+				"uri": "/bcrc/xsodata/bcrc.xsodata/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/data/metadata.xml",
+					"annotations": [
+						"localAnnotations_1"
+					]
+				}
+			},
+			"localAnnotations_1": {
+				"type": "ODataAnnotation",
+				"uri": "localService/data/localAnnotations_1.xml",
+				"settings": {
+					"localUri": "localService/data/localAnnotations_1.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "OVP.cardtemplate",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.32.0",
+			"libs": {
+				"sap.collaboration": {},
+				"sap.m": {},
+				"sap.ovp": {},
+				"sap.ui.comp": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.uxap": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"data": {
+				"dataSource": "data",
+				"settings": {
+					"defaultCountMode": "Inline"
+				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"extends": {
+			"extensions": {}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ovp": {
+		"globalFilterModel": "data",
+		"globalFilterEntityType": "RequestQueryType",
+		"cards": {
+			"com.sap.ipdci.bcrc.rcDashboard_card01": {
+				"model": "data",
+                "template": "sap.ovp.cards.charts.donut",
+                "settings": {
+					"title": "{{com.sap.ipdci.bcrc.rcDashboard_card01_title}}",
+					"subTitle": "{{com.sap.ipdci.bcrc.rcDashboard_card01_subTitle}}",
+                    "entitySet": "RequestQuery",
+        			"chartAnnotationPath" : "com.sap.vocabularies.UI.v1.Chart#MaterialsPerFamily",
+        			"idenfiticationAnnotationPath" : "com.sap.vocabularies.UI.v1.Identification#MaterialsPerFamily",
+        			"presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#MaterialsPerFamily"
+                }
+			},
+			"com.sap.ipdci.bcrc.rcDashboard_card02": {
+				"model": "data",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{com.sap.ipdci.bcrc.rcDashboard_card02_title}}",
+					"subTitle": "{{com.sap.ipdci.bcrc.rcDashboard_card02_subTitle}}",
+					"entitySet": "RequestQuery",
+					"addODataSelect": true,
+					"sortBy": "MaterialCount",
+					"sortOrder": "descending",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#MaterialsByRegulation",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#CompanyGuideline"
+				}
+			},
+			"com.sap.ipdci.bcrc.rcDashboard_card03": {
+				"model": "data",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{com.sap.ipdci.bcrc.rcDashboard_card03_title}}",
+					"subTitle": "{{com.sap.ipdci.bcrc.rcDashboard_card03_subTitle}}",
+					"entitySet": "RequestQuery",
+					"listType": "condensed",
+					"listFlavor": "standard",
+					"sortBy": "MaterialCount",
+					"sortOrder": "descending",
+					"addODataSelect": true,
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#MaterialsByRegulation",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#ExternalRegulation"
+				}
+			},
+			"com.sap.ipdci.bcrc.rcDashboard_card04": {
+				"model": "data",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{com.sap.ipdci.bcrc.rcDashboard_card04_title}}",
+					"subTitle": "{{com.sap.ipdci.bcrc.rcDashboard_card04_subTitle}}",
+					"entitySet": "RequestQuery",
+					"addODataSelect": true,
+					"sortBy": "RequestCount",
+					"sortOrder": "descending",
+					"listFlavor": "bar",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#RequestsBySupplier",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#OutboundRequest"
+				}
+			},
+			"com.sap.ipdci.bcrc.rcDashboard_card05": {
+				"model": "data",
+				"template": "sap.ovp.cards.list",
+				"settings": {
+					"title": "{{com.sap.ipdci.bcrc.rcDashboard_card05_title}}",
+					"subTitle": "{{com.sap.ipdci.bcrc.rcDashboard_card05_subTitle}}",
+					"entitySet": "RequestQuery",
+					"addODataSelect": true,
+					"sortBy": "RequestCount",
+					"sortOrder": "descending",
+					"listFlavor": "bar",
+					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem#RequestsByCustomer",
+					"selectionAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#InboundRequest"
+				}
+			}
+		}
+	}
+}

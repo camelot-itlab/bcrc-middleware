@@ -1,0 +1,32 @@
+PROCEDURE "procedures::materialUsageCreateMethod" ( 
+IN im_row "MAT.MaterialUsage",
+OUT ex_error "Procedures.tt_errors")
+	LANGUAGE SQLSCRIPT
+	SQL SECURITY INVOKER AS
+	--DEFAULT SCHEMA <default_schema_name>
+BEGIN
+/***************************** 
+	Write your procedure logic 
+ *****************************/
+
+declare lv_matId string;
+declare lv_regId string;
+declare lv_appAreaId string;
+declare lv_status string;
+
+select "MaterialID", "RegulationID", "ApplicationAreaID"
+     into lv_matId, lv_regId, lv_appAreaId from :im_row;
+
+lv_status = 'New Regulation';
+
+if :lv_regId = '' or :lv_appAreaId = '' or :lv_matId = '' or :lv_status = '' then
+  ex_error = select 500 as http_status_code, 
+               'Invalid entry ' || lv_regId as error_message, 
+                     'None of the fields MaterialID, RegulationID, ApplicationAreaID, Status, Criticality can not be empty' as detail from dummy;
+else
+      
+      insert into "MAT.MaterialUsage" 
+             values (lv_matId, lv_regId, lv_appAreaId, lv_status);                            
+ end if;
+  
+END;

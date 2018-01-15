@@ -1,0 +1,17 @@
+.settings
+.project
+*.bak
+.mta
+*.mtar
+*.jar
+node_modules
+node
+target
+etc
+sapui5
+/node_modules
+/.mta
+/mta*
+/web/node_modules
+/core-js/node_modules
+/site-web/node_modules

@@ -1,0 +1,25 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Response('fe3eddb0-da93-11e7-9c74-7954e1ffacb2')",
+				"type": "com.sap.ipdci.bcrc.services.ResponseType"
+			},
+			"RequestID": "fe3eddb0-da93-11e7-9c74-7954e1ffacb2",
+			"ResponseDate": "/Date(1513296000000)/",
+			"Quantity": "3.000",
+			"UoM": "%",
+			"ComplianceStatus": "X",
+			"Request": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Response('fe3eddb0-da93-11e7-9c74-7954e1ffacb2')/Request"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Response('fe3eddb0-da93-11e7-9c74-7954e1ffacb2')/ComplianceStatusEntity"
+				}
+			}
+		}]
+	}
+}

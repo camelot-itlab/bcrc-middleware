@@ -1,0 +1,62 @@
+<mvc:View
+	controllerName="camelot.smartcontract.administration.controller.ApplicationManager"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns="sap.m">
+
+	<Table id="oTableAppList" inset="false" mode="SingleSelectLeft" selectionChange="onAppSelectionChange" noDataText="No existing Applications"
+		items="{
+			path: 'applicationsModel>/',
+			sorter: {
+				path: 'AppName'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Distributed Applications" level="H2"/>
+                <ToolbarSpacer/>                	
+				<Button text="Add" icon="sap-icon://add" type="Accept" visible="true" press="openAddApplicationDialog"/>
+                <Button text="Edit" icon="sap-icon://edit" type="Accept" visible="true" press="openAddApplicationDialog"/>  
+				<Button text="Export" icon="sap-icon://inspect" type="Accept" visible="true" press="onExportApplication"/>  
+                <Button text="Import" icon="sap-icon://cause" type="Accept" visible="true" press="onImportpplication"/>
+                <Button text="Delete All" icon="sap-icon://cancel" type="Reject" visible="true" press="onDeleteAll"/>  
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="10%">
+				<Text text="Application ID" />
+			</Column>
+			<Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Application Name" />
+			</Column>
+			<Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Technical App Name" />
+			</Column>
+            <Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Version" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{applicationsModel>id}"/>
+					<Text
+						text="{applicationsModel>AppName}"/>
+                    <Text
+						text="{applicationsModel>TechnicalAppName}"/>
+                    <Text
+						text="{applicationsModel>Version}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

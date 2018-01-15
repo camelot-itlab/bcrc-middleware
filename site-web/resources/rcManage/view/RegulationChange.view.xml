@@ -1,0 +1,319 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.ipdci.bcrc.rcManage.controller.RegulationChange"
+	xmlns:uxap="sap.uxap" xmlns:m="sap.m">
+	<uxap:ObjectPageLayout showTitleInHeaderContent="true" showHeaderContent="true" showAnchorBar="true" showFooter="false"
+		subSectionLayout="TitleOnTop">
+		<uxap:headerContent>
+			<m:VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<m:items>
+					<m:ObjectStatus title="Compliance Status" text="{ComplianceStatusEntity/Description}" state="{path: 'ComplianceStatus', formatter: '.formatter.fnComplianceStatusCriticality'}"/>
+					<m:ObjectStatus title="Last Changed By" text="{ChangedBy}" state="None"/>
+					<m:ObjectStatus title="Last Changed On"
+						text="{path: 'ChangeDate', type: '.formatter.oDateType'}" state="None"/>
+				</m:items>
+				<m:layoutData/>
+			</m:VBox>
+			<m:VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<m:items>
+					<m:Label text="New Threshold" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+					<m:ObjectNumber number="{NewThreshold}" unit="{NewUoM}" emphasized="true" state="None"/>
+				</m:items>
+				<m:layoutData/>
+			</m:VBox>
+			<m:VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+				visible="true" displayInline="false">
+				<m:items>
+					<m:Label text="Old Threshold" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+					<m:ObjectNumber number="{OldThreshold}" unit="{OldUoM}" emphasized="true" state="None"/>
+				</m:items>
+				<m:layoutData/>
+			</m:VBox>
+		</uxap:headerContent>
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader objectTitle="{Substance/Name}"
+				objectSubtitle="{Substance/CAS}" headerDesign="Light" objectImageShape="Square" isObjectIconAlwaysVisible="false"
+				isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false" isActionAreaAlwaysVisible="true">
+				<uxap:actions/>
+				<uxap:breadCrumbsLinks>
+					<m:Link text="{ConditionOfUse/Regulation/Name}" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true"
+						emphasized="false" subtle="false" press="fnHandleNoAction"/>
+					<m:Link text="{ConditionOfUse/ApplicationArea/Description}" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true"
+						visible="true" emphasized="false" subtle="false" press="fnHandleNoAction"/>
+				</uxap:breadCrumbsLinks>
+				<uxap:navigationBar/>
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:sections>
+			<uxap:ObjectPageSection showTitle="true" title="Affected Materials" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Affected Products" mode="Expanded">
+						<uxap:blocks>
+							<m:Table id="MaterialRegulationChanges" width="100%" noDataText="No data" mode="MultiSelect" showSeparators="All" growing="true" growingThreshold="20"
+								growingScrollToLoad="true" itemPress="_onTableItemPress2" items="{
+									path:'MaterialRegulationChanges', 
+									parameters: {expand:'Material,Material/BusinessPartnerMaterials,Material/ProductFamily,ComplianceStatusEntity'}}">
+								<m:infoToolbar>
+									<m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+										<m:content>
+											<m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:content>
+									</m:Toolbar>
+								</m:infoToolbar>
+								<m:headerToolbar>
+									<m:Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+										<m:content>
+											<m:Title text="Affected Products" titleStyle="Auto" width="auto" textAlign="Begin" visible="true"/>
+											<m:ToolbarSpacer width=""/>
+											<m:Button text="Re-run Compliance Check" type="Default" icon="sap-icon://lab" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="Information Request" type="Default" icon="sap-icon://collaborate" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleInformationRequest"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+										</m:content>
+										<m:tooltip/>
+									</m:Toolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Product" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Product Family" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Supply Type" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Compliance Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Active" press="_onRowPress3">
+										<m:cells>
+											<m:ObjectIdentifier title="{Material/Description}" text="{Material/ID}" titleActive="false" visible="true"/>
+											<m:Text text="{Material/ProductFamily/Name}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<m:ObjectStatus text="{Material/SupplyType}" state="None" icon="{path: 'Material/SupplyTypeIcon', formatter: '.formatter.fnSupplyTypeIcon'}"/>
+											<m:ObjectStatus text="{ComplianceStatusEntity/Description}" state="{path: 'ComplianceStatus', formatter: '.formatter.fnComplianceStatusCriticality'}" icon="{path: 'ComplianceStatus', formatter: '.formatter.fnComplianceStatusIcon'}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Outbound Requests" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Outbound Requests" mode="Expanded">
+						<uxap:blocks>
+							<m:Table id="OutboundRequests" width="100%" noDataText="No data" mode="MultiSelect" showSeparators="All" growing="true" growingThreshold="20"
+								growingScrollToLoad="true" items="{
+									path: 'Request',
+									parameters: {expand: 'Material,Material/ProductFamily,BusinessPartner,Response,RequestStatusEntity'}, 
+									filters: [{path: 'Inbound', operator: 'EQ', value1: '-'}]}">
+									<!--, 
+									sorters: [{path: 'BusinessPartnerID', descending: false, group: '.fnBusinessPartnerGetGroup'}],
+									groupHeaderFactory: '.fnGetGroupHeader'}"-->
+								<m:infoToolbar>
+									<m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+										<m:content>
+											<m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:content>
+									</m:Toolbar>
+								</m:infoToolbar>
+								<m:headerToolbar>
+									<m:Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+										<m:content>
+											<m:Title text="Outbound Requests" titleStyle="Auto" width="auto" textAlign="Begin" visible="true"/>
+											<m:ToolbarSpacer width=""/>
+											<m:Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+										</m:content>
+										<m:tooltip/>
+									</m:Toolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Material" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Supplier" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Request Date" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Response Due Date" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Compliance Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Request Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Active" press="fnHandleNoAction">
+										<m:cells>
+											<m:ObjectIdentifier title="{Material/Description}" text="{Material/ID}" titleActive="false" visible="true"/>
+											<m:ObjectIdentifier title="{BusinessPartner/Name}" text="{BusinessPartner/ID}" titleActive="false" visible="true"/>
+											<m:Text text="{path: 'RequestDate', type: '.formatter.oDateType'}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<m:Text text="{path: 'DueDate', type: '.formatter.oDateType'}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<m:ObjectStatus text="{Response/ComplianceStatusEntity/Description}" state="{path: 'Response/ComplianceStatus', formatter: '.formatter.fnComplianceStatusCriticality'}" icon="{path: 'Response/ComplianceStatus', formatter: '.formatter.fnComplianceStatusIcon'}"/>
+											<m:ObjectStatus text="{RequestStatusEntity/Description}" state="{path: 'RequestStatus', formatter: '.formatter.fnRequestStatusCriticality'}" icon="{path: 'RequestStatus', formatter: '.formatter.fnRequestStatusIcon'}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection showTitle="true" title="Inbound Requests" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Inbound Requests" mode="Expanded">
+						<uxap:blocks>
+							<m:Table id="InboundRequests" width="100%" noDataText="No data" mode="MultiSelect" showSeparators="All" growing="true" growingThreshold="20"
+								growingScrollToLoad="true" items="{
+									path: 'Request', 
+									parameters: {expand: 'Material,Material/ProductFamily,BusinessPartner,Response,RequestStatusEntity'}, 
+									filters: [{path: 'Inbound', operator: 'EQ', value1: 'X'}]}">
+									<!--, 
+									sorters: [{path: 'BusinessPartnerID', descending: false, group: '.fnBusinessPartnerGetGroup'}],
+									groupHeaderFactory: '.fnGetGroupHeader'}"-->
+								<m:infoToolbar>
+									<m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+										<m:content>
+											<m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:content>
+									</m:Toolbar>
+								</m:infoToolbar>
+								<m:headerToolbar>
+									<m:Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+										<m:content>
+											<m:Title text="Inbound Requests" titleStyle="Auto" width="auto" textAlign="Begin" visible="true"/>
+											<m:ToolbarSpacer width=""/>
+											<m:Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+											<m:Button text="" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true"
+												iconDensityAware="false" press="fnHandleNoAction"/>
+										</m:content>
+										<m:tooltip/>
+									</m:Toolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Material" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Customer" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Request Date" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Response Due Date" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Compliance Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+									<m:Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<m:header>
+											<m:Text text="Request Status" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+										</m:header>
+										<m:footer/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Active" press="fnHandleNoAction">
+										<m:cells>
+											<m:ObjectIdentifier title="{Material/Description}" text="{Material/ID}" titleActive="false" visible="true"/>
+											<m:ObjectIdentifier title="{BusinessPartner/Name}" text="{BusinessPartner/ID}" titleActive="false" visible="true"/>
+											<m:Text text="{path: 'RequestDate', type: '.formatter.oDateType'}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<m:Text text="{path: 'DueDate', type: '.formatter.oDateType'}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+											<m:ObjectStatus text="{Response/ComplianceStatusEntity/Description}" state="{path: 'Response/ComplianceStatus', formatter: '.formatter.fnComplianceStatusCriticality'}" icon="{path: 'Response/ComplianceStatus', formatter: '.formatter.fnComplianceStatusIcon'}"/>
+											<m:ObjectStatus text="{RequestStatusEntity/Description}" state="{path: 'RequestStatus', formatter: '.formatter.fnRequestStatusCriticality'}" icon="{path: 'RequestStatus', formatter: '.formatter.fnRequestStatusIcon'}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+		<uxap:footer/>
+	</uxap:ObjectPageLayout>
+</mvc:View>

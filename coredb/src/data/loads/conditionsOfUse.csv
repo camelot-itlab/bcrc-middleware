@@ -1,0 +1,10 @@
+RegulationID,ApplicationAreaID,RegulationProp,ApplicationAreaProp,LastChangedBy,LastChangeDate
+EUR,CHILD,European Legislation on Skin Contact Materials,Child Care,Michael Jung,2017-12-07T11:47:36.721Z
+EUR,PET,European Legislation on Skin Contact Materials,Pet Care,Michael Jung,2017-12-07T11:47:36.721Z
+EUR,PERSO,European Legislation on Skin Contact Materials,Personal Care,Michael Jung,2017-12-07T11:47:36.721Z
+CHN,CHILD,China National Food Safety Standard,Child Care,Michael Jung,2017-12-07T11:47:36.721Z
+US,CHILD,US FDA Food Contact ,Child Care,Michael Jung,2017-12-07T11:47:36.721Z
+US,PET,US FDA Food Contact ,Pet Care,Michael Jung,2017-12-07T11:47:36.721Z
+US,PERSO,US FDA Food Contact ,Personal Care,Michael Jung,2017-12-07T11:47:36.721Z
+HEN,PERSO,Henkel Shampoo Standard,Personal Care,Michael Jung,2017-12-07T11:47:36.721Z
+HEN,CHILD,Henkel Shampoo Standard,Child Care,Michael Jung,2017-12-07T11:47:36.721Z

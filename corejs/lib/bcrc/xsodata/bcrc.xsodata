@@ -1,0 +1,374 @@
+service namespace "com.sap.ipdci.bcrc.services" {    
+    "BP.BusinessPartner" as "BusinessPartner"
+        navigates("BusinessPartner_to_BusinessPartnerMaterial" as "BusinessPartnerMaterials", 
+                  "BusinessPartner_to_Request" as "Requests")
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "BP.BusinessPartnerMaterial" as "BusinessPartnerMaterial" 
+        navigates("BusinessPartnerMaterial_to_BusinessPartner" as "BusinessPartner", 
+                  "BusinessPartnerMaterial_to_Material" as "Material", 
+                  "BusinessPartnerMaterial_to_ComplianceStatus" as "ComplianceStatusEntity")
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "MAT.ProductFamily" as "ProductFamily"
+        navigates("ProductFamily_to_Material" as "Materials")
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "MAT.Material" as "Material" 
+        navigates("Material_to_BillOfMaterial" as "BillOfMaterials", 
+                  "Material_to_IngredientIn" as "IngredientIn", 
+                  "Material_to_MaterialUsage" as "MaterialUsages", 
+                  "Material_to_Composition" as "Compositions", 
+                  "Material_to_BusinessPartnerMaterial" as "BusinessPartnerMaterials",
+                  "Material_to_MaterialRegulationChange" as "MaterialRegulationChanges", 
+                  "Material_to_Request" as "Requests", 
+                  "Material_to_ProductFamily" as "ProductFamily", 
+                  "Material_to_ComplianceStatus" as "ComplianceStatusEntity")
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "MAT.BillOfMaterial" as "BillOfMaterial" 
+        navigates("BillOfMaterial_to_SourceMaterial" as "SourceMaterial",
+                  "BillOfMaterial_to_TargetMaterial" as "TargetMaterial")
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "MAT.MaterialUsage" as "MaterialUsage"
+        navigates("MaterialUsage_to_Material" as "Material", 
+                  "MaterialUsage_to_ConditionOfUse" as "ConditionOfUse", 
+                  "MaterialUsage_to_ComplianceStatus" as "ComplianceStatusEntity");
+
+    "SUB.Substance" as "Substance" 
+        navigates("Substance_to_Composition" as "Compositions") 
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "COM.Composition" as "Composition"
+        navigates("Composition_to_Material" as "Material", 
+                  "Composition_to_Substance" as "Substance");
+
+    "REG.Regulation" as "Regulation"
+        navigates("Regulation_to_ConditionOfUse" as "ConditionsOfUse") 
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "REG.ApplicationArea" as "ApplicationArea"
+        navigates("ApplicationArea_to_ConditionOfUse" as "ConditionsOfUse") 
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "REG.ConditionOfUse" as "ConditionOfUse"
+        navigates("ConditionOfUse_to_RegulationChange" as "RegulationChanges", 
+                  "ConditionOfUse_to_SubstanceRegulation" as "SubstanceRegulations", 
+                  "ConditionOfUse_to_MaterialUsage" as "MaterialUsages",
+                  "ConditionOfUse_to_MaterialRegulationChange" as "MaterialRegulationChanges", 
+                  "ConditionOfUse_to_Regulation" as "Regulation", 
+                  "ConditionOfUse_to_ApplicationArea" as "ApplicationArea")
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "REG.RegulationChange" as "RegulationChange"
+        navigates("RegulationChange_to_ComplianceStatus" as "ComplianceStatusEntity", 
+                  "RegulationChange_to_ConditionOfUse" as "ConditionOfUse", 
+                  "RegulationChange_to_Substance" as "Substance", 
+                  "RegulationChange_to_SubstanceRegulation" as "SubstanceRegulation", 
+                  "RegulationChange_to_MaterialRegulationChange" as "MaterialRegulationChanges",
+                  "RegulationChange_to_Request" as "Request");
+
+    "REG.MaterialRegulationChange" as "MaterialRegulationChange" 
+        navigates("MaterialRegulationChange_to_ComplianceStatus" as "ComplianceStatusEntity", 
+                  "MaterialRegulationChange_to_ConditionOfUse" as "ConditionOfUse", 
+                  "MaterialRegulationChange_to_SubstanceRegulation" as "SubstanceRegulation", 
+                  "MaterialRegulationChange_to_RegulationChange" as "RegulationChange",
+                  "MaterialRegulationChange_to_Substance" as "Substance", 
+                  "MaterialRegulationChange_to_Material" as "Material", 
+                  "MaterialRegulationChange_to_Request" as "Request");
+
+    "REG.SubstanceRegulation" as "SubstanceRegulation" 
+        navigates("SubstanceRegulation_to_Substance" as "Substance", 
+                  "SubstanceRegulation_to_ConditionOfUse" as "ConditionOfUse", 
+                  "SubstanceRegulation_to_MaterialRegulationChange" as "MaterialRegulationChanges")
+        create events( before "bcrc.xsjslib:create.xsjslib::createRegulationChange" )  
+        update events( before "bcrc.xsjslib:create.xsjslib::createRegulationChange" );
+        
+    "REQ.Request" as "Request"
+        navigates("Request_to_RequestStatus" as "RequestStatusEntity", 
+                  "Request_to_Material" as "Material", 
+                  "Request_to_BusinessPartner" as "BusinessPartner",
+                  "Request_to_ConditionOfUse" as "ConditionOfUse", 
+                  "Request_to_SubstanceRegulation" as "SubstanceRegulation", 
+                  "Request_to_RegulationChange" as "RegulationChange",
+                  "Request_to_MaterialRegulationChange" as "MaterialRegulationChange",
+                  "Request_to_Substance" as "Substance", 
+				  "Request_to_Composition" as "Composition",
+                  "Request_to_Response" as "Response");
+        
+    "REQ.Response" as "Response"
+        navigates("Response_to_Request" as "Request", 
+                  "Response_to_ComplianceStatus" as "ComplianceStatusEntity");
+    
+    "STAT.ComplianceStatus" as "ComplianceStatusEntity"        
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "STAT.RequestStatus" as "RequestStatusEntity"        
+        create forbidden
+    	update forbidden
+    	delete forbidden;
+
+    "bcrc.ipdci.coredb.data.models::RequestQuery" as "RequestQuery" keys generate local "ID" aggregates always;
+
+    association "BusinessPartner_to_BusinessPartnerMaterial"
+        principal "BusinessPartner"("ID") multiplicity "1"
+        dependent "BusinessPartnerMaterial"("BusinessPartnerID") multiplicity "*";
+
+    association "BusinessPartner_to_Request"
+        principal "BusinessPartner"("ID") multiplicity "1"
+        dependent "Request"("BusinessPartnerID") multiplicity "*";
+
+    association "BusinessPartnerMaterial_to_BusinessPartner"
+        principal "BusinessPartnerMaterial"("BusinessPartnerID") multiplicity "1"
+        dependent "BusinessPartner"("ID") multiplicity "1";
+
+    association "BusinessPartnerMaterial_to_Material"
+        principal "BusinessPartnerMaterial"("MaterialID") multiplicity "1"
+        dependent "Material"("ID") multiplicity "1";
+
+    association "BusinessPartnerMaterial_to_ComplianceStatus"
+        principal "BusinessPartnerMaterial"("ComplianceStatus") multiplicity "1"
+        dependent "ComplianceStatusEntity"("ID") multiplicity "1";
+
+    association "ProductFamily_to_Material"
+        principal "ProductFamily"("ID") multiplicity "1"
+        dependent "Material"("ProductFamilyID") multiplicity "*";
+    
+    association "Material_to_ProductFamily"
+        principal "Material"("ProductFamilyID") multiplicity "1"
+        dependent "ProductFamily"("ID") multiplicity "1"; 
+    
+    association "Material_to_BillOfMaterial"
+        principal "Material"("ID") multiplicity "1"
+        dependent "BillOfMaterial"("TargetMaterialID") multiplicity "*";
+
+    association "Material_to_IngredientIn"
+        principal "Material"("ID") multiplicity "1"
+        dependent "BillOfMaterial"("SourceMaterialID") multiplicity "*";
+
+    association "Material_to_ComplianceStatus"
+        principal "Material"("ComplianceStatus") multiplicity "1"
+        dependent "ComplianceStatusEntity"("ID") multiplicity "1";
+
+    association "BillOfMaterial_to_SourceMaterial"
+        principal "BillOfMaterial"("SourceMaterialID") multiplicity "1"
+        dependent "Material"("ID") multiplicity "1";
+
+    association "BillOfMaterial_to_TargetMaterial"
+        principal "BillOfMaterial"("TargetMaterialID") multiplicity "1"
+        dependent "Material"("ID") multiplicity "1";
+
+    association "Material_to_MaterialUsage"
+        principal "Material"("ID") multiplicity "1"
+        dependent "MaterialUsage"("MaterialID") multiplicity "*";
+
+    association "Material_to_Composition"
+        principal "Material"("ID") multiplicity "1"
+        dependent "Composition"("MaterialID") multiplicity "*";
+
+    association "Material_to_BusinessPartnerMaterial"
+        principal "Material"("ID") multiplicity "1"
+        dependent "BusinessPartnerMaterial"("MaterialID") multiplicity "*";
+
+    association "Material_to_MaterialRegulationChange"
+        principal "Material"("ID") multiplicity "1"
+        dependent "MaterialRegulationChange"("MaterialID") multiplicity "*";
+    
+    association "Material_to_Request"
+        principal "Material"("ID") multiplicity "1"
+        dependent "Request"("MaterialID") multiplicity "*";
+    
+    association "MaterialUsage_to_Material"
+        principal "MaterialUsage"("MaterialID") multiplicity "1"
+        dependent "Material"("ID") multiplicity "1";
+    
+    association "MaterialUsage_to_ConditionOfUse"
+        principal "MaterialUsage"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1";
+
+    association "MaterialUsage_to_ComplianceStatus"
+        principal "MaterialUsage"("ComplianceStatus") multiplicity "1"
+        dependent "ComplianceStatusEntity"("ID") multiplicity "1";
+
+    association "Substance_to_Composition"
+        principal "Substance"("ID") multiplicity "1"
+        dependent "Composition"("SubstanceID") multiplicity "*";
+
+    association "Composition_to_Material"
+        principal "Composition"("MATERIAL") multiplicity "1"
+        dependent "Material"("ID") multiplicity "1";
+
+    association "Composition_to_Substance"
+        principal "Composition"("SubstanceID") multiplicity "1"
+        dependent "Substance"("ID") multiplicity "1";
+
+    association "Regulation_to_ConditionOfUse"
+        principal "Regulation"("ID") multiplicity "1"
+        dependent "ConditionOfUse"("RegulationID") multiplicity "*";
+
+    association "ApplicationArea_to_ConditionOfUse"
+        principal "ApplicationArea"("ID") multiplicity "1"
+        dependent "ConditionOfUse"("ApplicationAreaID") multiplicity "*";
+
+    association "ConditionOfUse_to_Regulation"
+        principal "ConditionOfUse"("RegulationID") multiplicity "1"
+        dependent "Regulation"("ID") multiplicity "1";
+
+    association "ConditionOfUse_to_ApplicationArea"
+        principal "ConditionOfUse"("ApplicationAreaID") multiplicity "1"
+        dependent "ApplicationArea"("ID") multiplicity "1";
+
+    association "ConditionOfUse_to_RegulationChange"
+        principal "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "RegulationChange"("RegulationID", "ApplicationAreaID") multiplicity "*";
+
+    association "ConditionOfUse_to_SubstanceRegulation"
+        principal "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "SubstanceRegulation"("RegulationID", "ApplicationAreaID") multiplicity "*";
+
+    association "ConditionOfUse_to_MaterialUsage"
+        principal "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "MaterialUsage"("RegulationID", "ApplicationAreaID") multiplicity "*";
+
+    association "ConditionOfUse_to_MaterialRegulationChange"
+        principal "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "MaterialRegulationChange"("RegulationID", "ApplicationAreaID") multiplicity "*";
+
+    association "RegulationChange_to_ConditionOfUse"
+        principal "RegulationChange"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1";
+    
+    association "RegulationChange_to_Substance"
+        principal "RegulationChange"("SubstanceID") multiplicity "1"
+        dependent "Substance"("ID") multiplicity "1";
+
+    association "RegulationChange_to_SubstanceRegulation"
+        principal "RegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "1"
+        dependent "SubstanceRegulation"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "1";
+
+    association "RegulationChange_to_MaterialRegulationChange"
+        principal "RegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1"
+        dependent "MaterialRegulationChange"( "RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "*";
+
+    association "RegulationChange_to_ComplianceStatus"
+        principal "RegulationChange"("ComplianceStatus") multiplicity "1"
+        dependent "ComplianceStatusEntity"("ID") multiplicity "1";
+
+    association "RegulationChange_to_Request"
+        principal "RegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1"
+        dependent "Request"("RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "*"; 
+
+    association "MaterialRegulationChange_to_ComplianceStatus"
+        principal "MaterialRegulationChange"("ComplianceStatus") multiplicity "1"
+        dependent "ComplianceStatusEntity"("ID") multiplicity "1";
+
+    association "MaterialRegulationChange_to_ConditionOfUse"
+        principal "MaterialRegulationChange"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1";
+
+    association "MaterialRegulationChange_to_SubstanceRegulation"
+        principal "MaterialRegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "1"
+        dependent "SubstanceRegulation"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "1";
+    
+    association "MaterialRegulationChange_to_RegulationChange"
+        principal "MaterialRegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1"
+        dependent "RegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1";
+    
+    association "MaterialRegulationChange_to_Substance"
+        principal "MaterialRegulationChange"("SubstanceID") multiplicity "1"
+        dependent "Substance"("ID") multiplicity "1";
+    
+    association "MaterialRegulationChange_to_Material"
+        principal "MaterialRegulationChange"("MaterialID") multiplicity "1"
+        dependent "Material"("ID") multiplicity "1"; 
+
+    association "MaterialRegulationChange_to_Request"
+        principal "MaterialRegulationChange"("MaterialID", "RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1"
+        dependent "Request"("MaterialID", "RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "*"; 
+
+    association "SubstanceRegulation_to_Substance"
+        principal "SubstanceRegulation"("SubstanceID") multiplicity "1"
+        dependent "Substance"("ID") multiplicity "1";
+
+    association "SubstanceRegulation_to_ConditionOfUse"
+        principal "SubstanceRegulation"("RegulationID", "ApplicationAreaID") multiplicity "1"
+        dependent "ConditionOfUse"("RegulationID", "ApplicationAreaID") multiplicity "1";
+
+    association "SubstanceRegulation_to_MaterialRegulationChange"
+        principal "SubstanceRegulation"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "1"
+        dependent "MaterialRegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "*";    
+
+    association "Request_to_SubstanceRegulation"
+        principal "Request"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "1"
+        dependent "SubstanceRegulation"("RegulationID", "ApplicationAreaID", "SubstanceID") multiplicity "1";
+
+    association "Request_to_RegulationChange"
+        principal "Request"("RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1"
+        dependent "RegulationChange"("RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1";
+
+    association "Request_to_Material"
+        principal "Request"("MaterialID") multiplicity "1"
+        dependent "Material"("ID") multiplicity "1";
+
+    association "Request_to_BusinessPartner"
+        principal "Request"("BusinessPartnerID") multiplicity "1"
+        dependent "BusinessPartner"("ID") multiplicity "1";
+
+    association "Request_to_Response"
+        principal "Request"("RequestID") multiplicity "1"
+        dependent "Response"("RequestID") multiplicity "1"; 
+		
+    association "Request_to_Composition"
+        principal "Request"("MaterialID", "SubstanceID") multiplicity "1"
+        dependent "Composition"("MaterialID", "SubstanceID") multiplicity "*"; 
+    
+    association "Request_to_RequestStatus"
+        principal "Request"("RequestStatus") multiplicity "1"
+        dependent "RequestStatusEntity"("ID") multiplicity "1";
+
+    association "Request_to_MaterialRegulationChange"
+        principal "Request"("MaterialID", "RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1"
+        dependent "MaterialRegulationChange"("MaterialID", "RegulationID", "ApplicationAreaID", "SubstanceID", "RegulationChangeNo") multiplicity "1";
+    
+    association "Request_to_Substance"
+        principal "Request"("SubstanceID") multiplicity "1"
+        dependent "Substance"("ID") multiplicity "1";
+
+    association "Request_to_ConditionOfUse"
+        principal "Request"("RegulationID", "ApplicationArea") multiplicity "1"
+        dependent "ConditionOfUse"("RegulationID", "ApplicationArea") multiplicity "1";
+
+    association "Response_to_ComplianceStatus"
+        principal "Response"("ComplianceStatus") multiplicity "1"
+        dependent "ComplianceStatusEntity"("ID") multiplicity "1";
+
+    association "Response_to_Request"
+        principal "Response"("RequestID") multiplicity "1"
+        dependent "Request"("RequestID") multiplicity "1";   
+}
+
+
+settings {
+    metadata cache-control "max-age= 604800";
+}

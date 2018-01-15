@@ -1,0 +1,100 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA1')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerType"
+			},
+			"ID": "BUPA1",
+			"Name": "Supplier 1",
+			"Email": "supplier1@domain.com",
+			"IsOwned": null,
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA1')/BusinessPartnerMaterials"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA1')/Requests"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA2')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerType"
+			},
+			"ID": "BUPA2",
+			"Name": "Supplier 2",
+			"Email": "supplier2@domain.com",
+			"IsOwned": null,
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA2')/BusinessPartnerMaterials"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA2')/Requests"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA3')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerType"
+			},
+			"ID": "BUPA3",
+			"Name": "OEM",
+			"Email": "oem@domain.com",
+			"IsOwned": null,
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA3')/BusinessPartnerMaterials"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPA3')/Requests"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPAOEM1')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerType"
+			},
+			"ID": "BUPAOEM1",
+			"Name": "OEM 1",
+			"Email": "oem@domain.com",
+			"IsOwned": "X",
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPAOEM1')/BusinessPartnerMaterials"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPAOEM1')/Requests"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPASUPP1')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerType"
+			},
+			"ID": "BUPASUPP1",
+			"Name": "Supplier 1",
+			"Email": "supplier1@domain.com",
+			"IsOwned": null,
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPASUPP1')/BusinessPartnerMaterials"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartner('BUPASUPP1')/Requests"
+				}
+			}
+		}]
+	}
+}

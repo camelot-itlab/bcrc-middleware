@@ -1,0 +1,68 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('ALLOK')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "ALLOK",
+			"Description": "All Regulations Satisfied"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('AT')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "AT",
+			"Description": "Above Threshold"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('BT')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "BT",
+			"Description": "Below Threshold"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('COMPU')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "COMPU",
+			"Description": "Composition List Updated"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('NC')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "NC",
+			"Description": "Need for Collaboration"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('NOTOK')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "NOTOK",
+			"Description": "One or more Regulations Violated"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('NR')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "NR",
+			"Description": "New/Changed Regulation"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('PRES')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "PRES",
+			"Description": "Pending Response"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ComplianceStatusEntity('PSR')",
+				"type": "com.sap.ipdci.bcrc.services.ComplianceStatusEntityType"
+			},
+			"ID": "PSR",
+			"Description": "Pending Supplier Requests"
+		}]
+	}
+}

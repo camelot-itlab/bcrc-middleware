@@ -1,0 +1,33 @@
+{
+	"Menu": [
+    {
+		"title": "Start New Network",
+		"icon": "sap-icon://begin",
+		"description": "Start a new private Ethereum network",
+        "targetPage": "StartNetwork"
+	},
+	{
+		"title": "Extend Existing Network",
+		"icon": "sap-icon://share",
+		"description": "Extend an existing Ethereum network",
+        "targetPage": "ExtendNetwork"
+	},
+	{
+		"title": "Existing Nodes",
+		"icon": "sap-icon://sys-monitor",
+		"description": "See details for the existing nodes",
+        "targetPage": "RunningNodes"
+	},
+	{
+		"title": "Existing BaaS Instances",
+		"icon": "sap-icon://sys-monitor",
+		"description": "See details for the existing BaaS Instances",
+        "targetPage": "RunningBaasInstances"
+	},
+	{
+		"title": "Applications Manager",
+		"icon": "sap-icon://dimension",
+		"description": "Manage Applications",
+        "targetPage": "ApplicationManager"
+	}]
+}

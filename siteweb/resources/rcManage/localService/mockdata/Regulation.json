@@ -1,0 +1,57 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('CHN')",
+				"type": "com.sap.ipdci.bcrc.services.RegulationType"
+			},
+			"ID": "CHN",
+			"Name": "China National Food Safety Standard",
+			"IsOwned": null,
+			"ConditionsOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('CHN')/ConditionsOfUse"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('EUR')",
+				"type": "com.sap.ipdci.bcrc.services.RegulationType"
+			},
+			"ID": "EUR",
+			"Name": "European Legislation on Skin Contact Materials",
+			"IsOwned": null,
+			"ConditionsOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('EUR')/ConditionsOfUse"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('HEN')",
+				"type": "com.sap.ipdci.bcrc.services.RegulationType"
+			},
+			"ID": "HEN",
+			"Name": "Henkel Shampoo Standard",
+			"IsOwned": null,
+			"ConditionsOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('HEN')/ConditionsOfUse"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('US')",
+				"type": "com.sap.ipdci.bcrc.services.RegulationType"
+			},
+			"ID": "US",
+			"Name": "US FDA Food Contact",
+			"IsOwned": null,
+			"ConditionsOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Regulation('US')/ConditionsOfUse"
+				}
+			}
+		}]
+	}
+}

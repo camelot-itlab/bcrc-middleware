@@ -1,0 +1,203 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')",
+				"type": "com.sap.ipdci.bcrc.services.RequestType"
+			},
+			"RequestID": "REQ001",
+			"BusinessPartnerID": "BUPA3",
+			"MaterialID": "FA-507",
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "CHILD",
+			"SubstanceID": "0000119-61-9",
+			"RegulationChangeNo": 1,
+			"RequestStatus": "REQP",
+			"RequestDate": "/Date(1509235200000)/",
+			"DueDate": "/Date(1509667200000)/",
+			"Inbound": "X",
+			"RequestStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/RequestStatusEntity"
+				}
+			},
+			"Material": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/Material"
+				}
+			},
+			"BusinessPartner": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/BusinessPartner"
+				}
+			},
+			"ConditionOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/ConditionOfUse"
+				}
+			},
+			"SubstanceRegulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/SubstanceRegulation"
+				}
+			},
+			"RegulationChange": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/RegulationChange"
+				}
+			},
+			"MaterialRegulationChange": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/MaterialRegulationChange"
+				}
+			},
+			"Substance": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/Substance"
+				}
+			},
+			"Composition": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/Composition"
+				}
+			},
+			"Response": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ001')/Response"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')",
+				"type": "com.sap.ipdci.bcrc.services.RequestType"
+			},
+			"RequestID": "REQ002",
+			"BusinessPartnerID": "BUPA1",
+			"MaterialID": "FA-507",
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "CHILD",
+			"SubstanceID": "0007732-18-5",
+			"RegulationChangeNo": 2,
+			"RequestStatus": "RESS",
+			"RequestDate": "/Date(1506816000000)/",
+			"DueDate": "/Date(1507161600000)/",
+			"Inbound": "-",
+			"RequestStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/RequestStatusEntity"
+				}
+			},
+			"Material": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/Material"
+				}
+			},
+			"BusinessPartner": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/BusinessPartner"
+				}
+			},
+			"ConditionOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/ConditionOfUse"
+				}
+			},
+			"SubstanceRegulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/SubstanceRegulation"
+				}
+			},
+			"RegulationChange": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/RegulationChange"
+				}
+			},
+			"MaterialRegulationChange": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/MaterialRegulationChange"
+				}
+			},
+			"Substance": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/Substance"
+				}
+			},
+			"Composition": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/Composition"
+				}
+			},
+			"Response": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ002')/Response"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')",
+				"type": "com.sap.ipdci.bcrc.services.RequestType"
+			},
+			"RequestID": "REQ003",
+			"BusinessPartnerID": "BUPA2",
+			"MaterialID": "FA-507",
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "CHILD",
+			"SubstanceID": "0000077-92-9",
+			"RegulationChangeNo": 3,
+			"RequestStatus": "REQS",
+			"RequestDate": "/Date(1506816000000)/",
+			"DueDate": "/Date(1507161600000)/",
+			"Inbound": "X",
+			"RequestStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/RequestStatusEntity"
+				}
+			},
+			"Material": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/Material"
+				}
+			},
+			"BusinessPartner": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/BusinessPartner"
+				}
+			},
+			"ConditionOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/ConditionOfUse"
+				}
+			},
+			"SubstanceRegulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/SubstanceRegulation"
+				}
+			},
+			"RegulationChange": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/RegulationChange"
+				}
+			},
+			"MaterialRegulationChange": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/MaterialRegulationChange"
+				}
+			},
+			"Substance": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/Substance"
+				}
+			},
+			"Composition": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/Composition"
+				}
+			},
+			"Response": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Request('REQ003')/Response"
+				}
+			}
+		}]
+	}
+}

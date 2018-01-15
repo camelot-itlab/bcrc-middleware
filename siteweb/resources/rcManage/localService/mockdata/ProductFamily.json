@@ -1,0 +1,29 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ProductFamily('PF-1')",
+				"type": "com.sap.ipdci.bcrc.services.ProductFamilyType"
+			},
+			"ID": "PF-1",
+			"Name": "Child Shampoo",
+			"Materials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ProductFamily('PF-1')/Materials"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ProductFamily('PF-2')",
+				"type": "com.sap.ipdci.bcrc.services.ProductFamilyType"
+			},
+			"ID": "PF-2",
+			"Name": "Packaging",
+			"Materials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ProductFamily('PF-2')/Materials"
+				}
+			}
+		}]
+	}
+}

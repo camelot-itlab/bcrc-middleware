@@ -1,0 +1,7 @@
+description = "XSJS Outbound Test for SAP BaaS API";
+host = "hyperledger-api.cfapps.eu10.hana.ondemand.com";
+port=443;
+pathPrefix = "/invoke";
+authType = none;
+useProxy = false;
+useSSL = false;

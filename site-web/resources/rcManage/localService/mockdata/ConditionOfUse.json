@@ -1,0 +1,374 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='CHN',ApplicationAreaID='CHILD')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "CHN",
+			"ApplicationAreaID": "CHILD",
+			"RegulationProp": "China National Food Safety Standard",
+			"ApplicationAreaProp": "Child Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='CHN',ApplicationAreaID='CHILD')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='CHN',ApplicationAreaID='CHILD')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='CHN',ApplicationAreaID='CHILD')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='CHN',ApplicationAreaID='CHILD')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='CHN',ApplicationAreaID='CHILD')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='CHN',ApplicationAreaID='CHILD')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='CHILD')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "CHILD",
+			"RegulationProp": "European Legislation on Skin Contact Materials",
+			"ApplicationAreaProp": "Child Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='CHILD')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='CHILD')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='CHILD')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='CHILD')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='CHILD')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='CHILD')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PERSO')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "PERSO",
+			"RegulationProp": "European Legislation on Skin Contact Materials",
+			"ApplicationAreaProp": "Personal Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PERSO')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PERSO')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PERSO')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PERSO')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PERSO')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PERSO')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PET')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "PET",
+			"RegulationProp": "European Legislation on Skin Contact Materials",
+			"ApplicationAreaProp": "Pet Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PET')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PET')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PET')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PET')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PET')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='EUR',ApplicationAreaID='PET')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='CHILD')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "HEN",
+			"ApplicationAreaID": "CHILD",
+			"RegulationProp": "Henkel Shampoo Standard",
+			"ApplicationAreaProp": "Child Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='CHILD')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='CHILD')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='CHILD')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='CHILD')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='CHILD')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='CHILD')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='PERSO')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "HEN",
+			"ApplicationAreaID": "PERSO",
+			"RegulationProp": "Henkel Shampoo Standard",
+			"ApplicationAreaProp": "Personal Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='PERSO')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='PERSO')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='PERSO')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='PERSO')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='PERSO')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='HEN',ApplicationAreaID='PERSO')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='CHILD')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "US",
+			"ApplicationAreaID": "CHILD",
+			"RegulationProp": "US FDA Food Contact ",
+			"ApplicationAreaProp": "Child Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='CHILD')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='CHILD')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='CHILD')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='CHILD')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='CHILD')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='CHILD')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PERSO')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "US",
+			"ApplicationAreaID": "PERSO",
+			"RegulationProp": "US FDA Food Contact ",
+			"ApplicationAreaProp": "Personal Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PERSO')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PERSO')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PERSO')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PERSO')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PERSO')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PERSO')/ApplicationArea"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PET')",
+				"type": "com.sap.ipdci.bcrc.services.ConditionOfUseType"
+			},
+			"RegulationID": "US",
+			"ApplicationAreaID": "PET",
+			"RegulationProp": "US FDA Food Contact ",
+			"ApplicationAreaProp": "Pet Care",
+			"LastChangedBy": "Michael Jung",
+			"LastChangeDate": "/Date(1509494400000)/",
+			"RegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PET')/RegulationChanges"
+				}
+			},
+			"SubstanceRegulations": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PET')/SubstanceRegulations"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PET')/MaterialUsages"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PET')/MaterialRegulationChanges"
+				}
+			},
+			"Regulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PET')/Regulation"
+				}
+			},
+			"ApplicationArea": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ConditionOfUse(RegulationID='US',ApplicationAreaID='PET')/ApplicationArea"
+				}
+			}
+		}]
+	}
+}

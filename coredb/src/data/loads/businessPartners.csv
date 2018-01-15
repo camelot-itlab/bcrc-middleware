@@ -1,0 +1,6 @@
+ID,Name,Email,IsOwned
+BUPAOEM1,OEM 1,oem@domain.com,X
+BUPA1,Supplier 1,supplier1@domain.com,-
+BUPA2,Supplier 2,supplier2@domain.com,-
+BUPA3,OEM,oem@domain.com,-
+BUPASUPP2,Supplier 1,supplier1@domain.com,-

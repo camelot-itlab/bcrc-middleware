@@ -1,0 +1,41 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ApplicationArea('CHILD')",
+				"type": "com.sap.ipdci.bcrc.services.ApplicationAreaType"
+			},
+			"ID": "CHILD",
+			"Description": "Child Care",
+			"ConditionsOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ApplicationArea('CHILD')/ConditionsOfUse"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ApplicationArea('PERSO')",
+				"type": "com.sap.ipdci.bcrc.services.ApplicationAreaType"
+			},
+			"ID": "PERSO",
+			"Description": "Personal Care",
+			"ConditionsOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ApplicationArea('PERSO')/ConditionsOfUse"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ApplicationArea('PET')",
+				"type": "com.sap.ipdci.bcrc.services.ApplicationAreaType"
+			},
+			"ID": "PET",
+			"Description": "Pet Care",
+			"ConditionsOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/ApplicationArea('PET')/ConditionsOfUse"
+				}
+			}
+		}]
+	}
+}

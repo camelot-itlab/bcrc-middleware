@@ -1,0 +1,29 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified" 
+    controllerName="camelot.smartcontract.administration.controller.Shell"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<u:Shell icon="../../images/cscn-logo.png" showPane="true" showCurtain="true" showCurtainPane="{shellView>/showPane}" searchVisible="false" >
+		<u:curtainContent>
+			<core:ComponentContainer height="100%" name="camelot.smartcontract.launchpad" />
+		</u:curtainContent>
+		<u:curtainPaneContent>
+			<List items="{appsMenu>/Menu}"> 
+				<items> 
+					<StandardListItem icon="{appsMenu>icon}" title="{appsMenu>title}" description="{appsMenu>description}" type="Navigation" 
+                        press="onMenuItemPress" visible="{parts:['oModelGlobalMode>/GlobalMode','appsMenu>targetPage'],formatter:'.formatter.appMenuVisible'}">
+						<customData> 
+								<core:CustomData key="targetPage" value="{appsMenu>targetPage}"/>
+						</customData>
+					</StandardListItem>
+				</items>
+			</List>
+		</u:curtainPaneContent>
+		<u:headItems>
+			<u:ShellHeadItem tooltip="Menu" icon="sap-icon://menu" press="onMenuTogglePress" selected="{shellView>/showPane}"/>			
+		</u:headItems>
+		<u:headEndItems>
+			<u:ShellHeadItem tooltip="Home" startsSection ="true" showSeparator="true" selected ="false" showMarker="false" icon="sap-icon://home" press="onBtnHomePress"/>			
+            <u:ShellHeadItem tooltip="APIs" startsSection="true" showSeparator="true" selected ="false" showMarker="false" icon="sap-icon://puzzle" press="onBtnAPIPress"/>			
+		</u:headEndItems>
+		
+	</u:Shell>
+</mvc:View>

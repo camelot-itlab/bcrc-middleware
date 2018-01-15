@@ -1,0 +1,47 @@
+{
+  "routes": [
+    {
+      "source": "/resources/(.*)",
+      "target": "$1",
+      "localDir": "resources/",
+      "replace": {
+        "pathSuffixes": [
+          "index.html"
+        ],
+        "vars": [
+          "sapui5url"
+        ]
+      }
+    },
+    {
+      "source": "^/admin-ui/(.*)",
+      "localDir": "resources"
+    },
+    {
+      "source": "/core/xsodata/(.*)",
+      "destination": "bcrc-core-js-backend"
+    },
+    {
+      "source": "/bcrc/xsodata/(.*)",
+      "destination": "bcrc-core-js-backend"
+    },
+    {
+      "source": "/bcrc/xsjs/(.*)",
+      "destination": "bcrc-core-js-backend"
+    },
+    {
+      "source": "/channel/(.*)",
+      "destination": "bcrc-core-js-backend"
+    },
+    {
+      "source": "/user/xsodata/(.*)",
+      "destination": "bcrc-core-js-backend"
+    },{
+      "source": "/bcrcRelayService",
+      "destination": "bcrc-core-js-backend"
+    },{
+      "source": "/test",
+      "destination": "bcrc-core-js-backend"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.2.0",
+		"id": "com.sap.ipdci.bcrc.rcManage",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"main": {
+				"uri": "/bcrc/xsodata/bcrc.xsodata",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "ach",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.32.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.2.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "generated.app.view.Consumer",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.32.0",
+			"libs": {
+				"sap.f": {
+					"minVersion": ""
+				},
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"": {
+				"dataSource": "main",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true,
+					"defaultUpdateMethod": "PUT"
+				}
+			}
+		},
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.ipdci.bcrc.rcManage.view",
+				"controlId": "App",
+				"clearTarget": false,
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"ChangedConditionsOfUse"
+					]
+				}
+			},
+			"targets": {
+				"ConditionOfUse": {
+					"controlAggregation": "pages",
+					"viewName": "ConditionOfUse",
+					"viewId": "ConditionOfUse",
+					"viewLevel": 2,
+					"transition": "slide"
+				},
+				"RegulationChange": {
+					"controlAggregation": "pages",
+					"viewName": "RegulationChange",
+					"viewId": "RegulationChange",
+					"viewLevel": 3,
+					"transition": "slide"
+				},
+				"ChangedConditionsOfUse": {
+					"controlAggregation": "pages",
+					"viewName": "ChangedConditionsOfUse",
+					"viewId": "ChangedConditionsOfUse",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"Supplier": {
+					"controlAggregation": "pages",
+					"viewName": "Supplier",
+					"viewId": "Supplier",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"Product": {
+					"controlAggregation": "pages",
+					"viewName": "Product",
+					"viewId": "Product",
+					"viewLevel": 3,
+					"transition": "slide"
+				},
+				"Consumer": {
+					"controlAggregation": "pages",
+					"viewName": "Consumer",
+					"viewId": "Consumer",
+					"viewLevel": 1,
+					"transition": "slide"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "ConditionOfUse/:context:",
+					"name": "ConditionOfUse",
+					"target": [
+						"ConditionOfUse"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"ChangedConditionsOfUse"
+					]
+				},
+				{
+					"pattern": "RegulationChange/:context:",
+					"name": "RegulationChange",
+					"target": [
+						"RegulationChange"
+					]
+				},
+				{
+					"pattern": "Supplier/:context:",
+					"name": "Supplier",
+					"target": [
+						"Supplier"
+					]
+				},
+				{
+					"pattern": "Product/:context:",
+					"name": "Product",
+					"target": [
+						"Product"
+					]
+				},
+				{
+					"pattern": "Consumer/:context:",
+					"name": "Consumer",
+					"target": [
+						"Consumer"
+					]
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-125')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType"
+			},
+			"BusinessPartnerID": "BUPA1",
+			"MaterialID": "FA-125",
+			"ExternalMaterialID": "FA-125",
+			"ComplianceStatus": "PRES",
+			"BusinessPartner": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-125')/BusinessPartner"
+				}
+			},
+			"Material": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-125')/Material"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-125')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-507')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType"
+			},
+			"BusinessPartnerID": "BUPA1",
+			"MaterialID": "FA-507",
+			"ExternalMaterialID": "FA-507",
+			"ComplianceStatus": "PRES",
+			"BusinessPartner": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-507')/BusinessPartner"
+				}
+			},
+			"Material": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-507')/Material"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA1',MaterialID='FA-507')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA2',MaterialID='FA-127')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType"
+			},
+			"BusinessPartnerID": "BUPA2",
+			"MaterialID": "FA-127",
+			"ExternalMaterialID": "FA-127",
+			"ComplianceStatus": "ALLOK",
+			"BusinessPartner": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA2',MaterialID='FA-127')/BusinessPartner"
+				}
+			},
+			"Material": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA2',MaterialID='FA-127')/Material"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPA2',MaterialID='FA-127')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPASUPP1',MaterialID='FA-507')",
+				"type": "com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType"
+			},
+			"BusinessPartnerID": "BUPASUPP1",
+			"MaterialID": "FA-507",
+			"ExternalMaterialID": "FA-507",
+			"ComplianceStatus": "PRES",
+			"BusinessPartner": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPASUPP1',MaterialID='FA-507')/BusinessPartner"
+				}
+			},
+			"Material": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPASUPP1',MaterialID='FA-507')/Material"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/BusinessPartnerMaterial(BusinessPartnerID='BUPASUPP1',MaterialID='FA-507')/ComplianceStatusEntity"
+				}
+			}
+		}]
+	}
+}

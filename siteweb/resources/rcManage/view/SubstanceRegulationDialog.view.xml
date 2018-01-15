@@ -1,0 +1,96 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.ipdci.bcrc.rcManage.controller.SubstanceRegulationDialog" xmlns:m="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<m:Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Create Substance Regulation" type="Standard"
+		verticalScrolling="true">
+		<m:content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title>
+					<core:Title text="Substance Regulation" level="Auto" icon="{= ${dialog>/mode} === 'New' ? 'sap-icon://create' : 'sap-icon://edit'}"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<m:Label text="Regulation" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+								</form:label>
+								<form:fields>
+									<m:ComboBox selectedKey="{entityInstance>/RegulationID}" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%"
+										items="{/Regulation}">
+										<m:items>
+											<core:Item text="{Name}" key="{ID}" enabled="true"/>
+										</m:items>
+									</m:ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<m:Label text="Application Area" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+								</form:label>
+								<form:fields>
+									<m:ComboBox selectedKey="{entityInstance>/ApplicationAreaID}" editable="false" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%"
+										items="{/ApplicationArea}">
+										<m:items>
+											<core:Item text="{Description}" key="{ID}" enabled="true"/>
+										</m:items>
+									</m:ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<m:Label text="Substance" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+								</form:label>
+								<form:fields>
+									<m:ComboBox selectedKey="{entityInstance>/SubstanceID}" editable="{= ${dialog>/mode} === 'New'}" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%"
+										items="{/Substance}">
+										<m:items>
+											<core:Item text="{Name} ({CAS})" key="{ID}" enabled="true"/>
+										</m:items>
+									</m:ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<m:Label text="Threshold" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+								</form:label>
+								<form:fields>
+									<m:ComboBox value="{entityInstance>/Sign}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+										<m:items>
+											<core:Item text="EQ" enabled="true"/>
+											<core:Item text="LE" enabled="true"/>
+											<core:Item text="LT" enabled="true"/>
+											<core:Item text="GE" enabled="true"/>
+											<core:Item text="GT" enabled="true"/>
+										</m:items>
+									</m:ComboBox>
+									<m:Input value="{entityInstance>/Threshold}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false"
+										maxLength="0"/>
+									<m:ComboBox value="{entityInstance>/UoM}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+										<m:items>
+											<core:Item text="%" enabled="true"/>
+											<core:Item text="mg/l" enabled="true"/>
+											<core:Item text="g/l" enabled="true"/>
+										</m:items>
+									</m:ComboBox>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</m:content>
+		<m:beginButton/>
+		<m:buttons>
+			<m:Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onConfirm"/>
+			<m:Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="onCancel"/>
+		</m:buttons>
+		<m:customHeader/>
+		<m:endButton/>
+		<m:subHeader/>
+	</m:Dialog>
+</mvc:View>

@@ -1,0 +1,4 @@
+BusinessPartnerID,MaterialID,ExternalMaterialID,ComplianceStatus
+BUPA1,FA-125,FA-125,PRES
+BUPA2,FA-127,FA-127,ALLOK
+BUPASUPP2,FA-507,FA-507,PRES

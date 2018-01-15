@@ -1,0 +1,107 @@
+<mvc:View
+	controllerName="camelot.smartcontract.administration.controller.RunningNodes"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Table inset="false" mode="SingleSelectLeft" selectionChange="onNodeSelectionChange" noDataText="No existing nodes"
+		items="{
+			path: '/nodes',
+			sorter: {
+				path: 'id'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Geth Nodes" level="H2"/>
+                <ToolbarSpacer/>                	
+				<Button text="{viewModel>/connectBtnTxt}" icon="sap-icon://share-2" type="Accept" visible="true" press="onConnectNode"/>  
+                <Button text="Start Mining" icon="sap-icon://inspect" type="Accept" visible="true" press="onStartMiningNode"/>
+                <Button text="Stop Mining" icon="sap-icon://inspect-down" type="Reject" visible="true" press="onStopMiningNode"/>
+				<Button text="Start" icon="sap-icon://restart" type="Accept" visible="true" press="onStartNode"/>  
+                <Button text="Stop" icon="sap-icon://stop" type="Reject" visible="true" press="onStopNode"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="10%">
+				<Text text="Node ID" />
+			</Column>
+			<Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Network ID" />
+			</Column>
+			<Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Port" />
+			</Column>
+			<Column
+				width="auto"
+				demandPopin="true">
+				<Text text="RPC Port" />
+			</Column>
+			<Column
+				width="auto"
+				demandPopin="true">
+				<Text text="URL" />
+            </Column>
+            <Column
+				width="auto"
+				demandPopin="true">
+				<Text text="Chain Config" />
+            </Column>
+            <Column
+				width="auto"
+				demandPopin="true">
+				<Text text="Default Account" />
+            </Column>
+			<Column
+				width="auto"
+				demandPopin="true">
+				<Text text="Default Node" />
+            </Column>
+            <Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Status" />
+            </Column>
+            <Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Connected" />
+            </Column>
+            <Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Last Known Mining Time" />
+            </Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{id}"/>
+					<Text
+						text="{NetworkId}"/>
+                    <Text
+						text="{BasePort}"/>
+                    <Text
+						text="{RPCPort}"/>
+                    <Text
+						text="{url}"/>
+                    <Text
+						text="{chainConfig}"/>					
+                    <Text
+						text="{DefaultAccount}"/>
+					<CheckBox
+						selected="{DefaultNode}" select="onDefaultNodeSelect"/>						
+                    <ObjectStatus text="{ path: 'running', formatter: '.formatRunningStateText' }" state="{ path: 'running', formatter: '.checkRunningState' }"/>
+                    <ObjectStatus text="{ path: 'connected', formatter: '.formatConnectedStateText' }" state="{ path: 'connected', formatter: '.checkRunningState' }"/>                    			
+                    <Text 
+						text="{ path: 'miningLastTime', formatter: '.formatMiningLastTimeText' }"/>                    			
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

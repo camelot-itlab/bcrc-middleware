@@ -1,0 +1,40 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RequestStatusEntity('REQP')",
+				"type": "com.sap.ipdci.bcrc.services.RequestStatusEntityType"
+			},
+			"ID": "REQP",
+			"Description": "Pending Supplier Requests"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RequestStatusEntity('REQR')",
+				"type": "com.sap.ipdci.bcrc.services.RequestStatusEntityType"
+			},
+			"ID": "REQR",
+			"Description": "Request Received"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RequestStatusEntity('REQS')",
+				"type": "com.sap.ipdci.bcrc.services.RequestStatusEntityType"
+			},
+			"ID": "REQS",
+			"Description": "Request Sent"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RequestStatusEntity('RESR')",
+				"type": "com.sap.ipdci.bcrc.services.RequestStatusEntityType"
+			},
+			"ID": "RESR",
+			"Description": "Response Received"
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RequestStatusEntity('RESS')",
+				"type": "com.sap.ipdci.bcrc.services.RequestStatusEntityType"
+			},
+			"ID": "RESS",
+			"Description": "Response Sent"
+		}]
+	}
+}

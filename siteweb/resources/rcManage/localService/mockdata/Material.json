@@ -1,0 +1,500 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "BOT-250",
+			"Description": "Bottle 250ml",
+			"ProductFamilyID": "PF-2",
+			"SupplyType": "Purchased",
+			"ComplianceStatus": "ALLOK",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('BOT-250')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "FA-125",
+			"Description": "FA Children 12+ US",
+			"ProductFamilyID": "PF-1",
+			"SupplyType": "Manufactured",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-125')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "FA-127",
+			"Description": "FA Children 12+ EUR",
+			"ProductFamilyID": "PF-1",
+			"SupplyType": "Manufactured",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-127')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "FA-305",
+			"Description": "FA Children 3+ US",
+			"ProductFamilyID": "PF-1",
+			"SupplyType": "Manufactured",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-305')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "FA-307",
+			"Description": "FA Children 3+ EUR",
+			"ProductFamilyID": "PF-1",
+			"SupplyType": "Manufactured",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-307')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "FA-505",
+			"Description": "FA Children 6+ US",
+			"ProductFamilyID": "PF-1",
+			"SupplyType": "Manufactured",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-505')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "FA-507",
+			"Description": "FA Children 6+ EUR",
+			"ProductFamilyID": "PF-1",
+			"SupplyType": "Purchased",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('FA-507')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "PACK-507",
+			"Description": "Label FA Children 6+ EUR",
+			"ProductFamilyID": "PF-2",
+			"SupplyType": "Purchased",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('PACK-507')/ComplianceStatusEntity"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')",
+				"type": "com.sap.ipdci.bcrc.services.MaterialType"
+			},
+			"ID": "SFG-507",
+			"Description": "FA Lotion 6+",
+			"ProductFamilyID": "PF-1 Raw",
+			"SupplyType": "Manufactured",
+			"ComplianceStatus": "NR",
+			"BillOfMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/BillOfMaterials"
+				}
+			},
+			"IngredientIn": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/IngredientIn"
+				}
+			},
+			"MaterialUsages": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/MaterialUsages"
+				}
+			},
+			"Compositions": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/Compositions"
+				}
+			},
+			"BusinessPartnerMaterials": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/BusinessPartnerMaterials"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/MaterialRegulationChanges"
+				}
+			},
+			"Requests": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/Requests"
+				}
+			},
+			"ProductFamily": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/ProductFamily"
+				}
+			},
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/Material('SFG-507')/ComplianceStatusEntity"
+				}
+			}
+		}]
+	}
+}

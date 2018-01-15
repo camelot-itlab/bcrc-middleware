@@ -1,0 +1,27 @@
+using Core as EPM;
+using MAT;
+using REQ;
+using STAT;
+
+@OData.publish : true
+context BP {
+
+        entity BusinessPartner {
+                key ID                          : EPM.BusinessKey;
+                Name                            : String(40);
+                Email                           : String(255);
+                IsOwned                         : String(1);
+                toBusinessPartnerMaterials      : Association[*] to BusinessPartnerMaterial on toBusinessPartnerMaterials.BusinessPartnerID = ID;
+                toRequests                      : Association[*] to REQ.Request on toRequests.BusinessPartnerID = ID;
+        };
+
+        entity BusinessPartnerMaterial {
+                key BusinessPartnerID   : EPM.BusinessKey;
+                key MaterialID          : EPM.BusinessKey;
+                ExternalMaterialID      : EPM.BusinessKey;
+                ComplianceStatus        : EPM.StatusT;                          
+                toComplianceStatus      : Association to STAT.ComplianceStatus on toComplianceStatus.ID = ComplianceStatus;  
+                toBusinessPartner       : Association to BusinessPartner on toBusinessPartner.ID = BusinessPartnerID;
+                toMaterial              : Association to MAT.Material on toMaterial.ID = MaterialID;
+        };
+};              

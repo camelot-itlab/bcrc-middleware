@@ -1,0 +1,16 @@
+{
+	"type": "sap.html5",
+	"builders": {
+		"default": "ui5-builder",
+		"configs": {}
+	},
+	"runners": {
+		"configs": {}
+	},
+	"attributes": {
+		"sap.watt.common.setting": [
+			"{\"generation\":[{\"templateId\":\"ui5template.basicSAPUI5ApplicationProjectCommon\",\"templateVersion\":\"1.32.0\",\"dateTimeStamp\":\"Thu, 11 Jan 2018 09:43:40 GMT\"},{\"templateId\":\"hanatemplates.basicSAPUI5ApplicationProject\",\"templateVersion\":\"0.0.0\",\"dateTimeStamp\":\"Thu, 11 Jan 2018 09:43:47 GMT\"}],\"basevalidator\":{\"services\":{\"js\":\"jsValidator\",\"xml\":\"xmlValidator\"}}}"
+		]
+	},
+	"mixinTypes": ["mtamodule"]
+}

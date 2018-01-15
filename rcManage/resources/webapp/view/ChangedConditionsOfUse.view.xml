@@ -1,0 +1,98 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f"
+	controllerName="com.sap.ipdci.bcrc.rcManage.controller.ChangedConditionsOfUse"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<f:DynamicPage title="Changed Conditions of Use">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Conditions of Use"/>
+				</f:heading>
+				<f:actions>
+					<Button
+							text="Start listening"
+							press="fnOnStartListening"/>
+					<Button
+							text="Stop listening"
+							type="fnOnStopListening"/>
+				</f:actions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<Table
+				id="MaterialUsage"
+				width="100%" noDataText="No data" mode="MultiSelect" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
+				itemPress="_onTableItemPress1" items="{
+						path: '/ConditionOfUse',
+						parameters: {expand: 'Regulation,ApplicationArea'}}">
+				<infoToolbar>
+					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+						<content>
+							<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar>
+					<Toolbar width="auto" height="46px" design="Transparent" visible="true" enabled="true">
+						<content>
+							<Title text="Conditions Of Use" titleStyle="Auto" width="auto" textAlign="Begin" visible="true"/>
+							<ToolbarSpacer width=""/>
+							<Button text="" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="fnHandleNoAction"/>
+							<Button text="" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="fnHandleNoAction"/>
+							<Button text="" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="fnHandleNoAction"/>
+							<Button text="" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true" visible="true"
+								iconDensityAware="false" press="fnHandleNoAction"/>
+						</content>
+						<tooltip/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<header>
+							<Text text="Regulation ID" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<header>
+							<Text text="Application Area ID" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<header>
+							<Text text="Last Changed By" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<header>
+							<Text text="Last Change Date" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</header>
+						<footer/>
+					</Column>
+					<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+						<header>
+							<Text text="Is Owned" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+						</header>
+						<footer/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Active">
+						<cells>
+							<ObjectIdentifier title="{Regulation/Name}" text="{Regulation/ID}" titleActive="false" visible="true"/>
+							<ObjectIdentifier title="{ApplicationArea/Description}" text="{ApplicationArea/ID}" titleActive="false" visible="true"/>
+							<Text text="{LastChangedBy}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+							<Text text="{path: 'LastChangeDate', type: '.formatter.oDateType'}" width="auto"
+								maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+							<CheckBox selected="{= ${Regulation/IsOwned} === 'X'}" enabled="false" width="auto"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

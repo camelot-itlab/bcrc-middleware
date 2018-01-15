@@ -1,0 +1,51 @@
+<mvc:View
+	controllerName="camelot.smartcontract.administration.controller.ManageDB"
+		xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormToolbar"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:toolbar>
+				<Toolbar id="TB1">
+					<Title text="Local MongoDB Status" level="H2"/>
+                <ToolbarSpacer/>                	
+				<Button text="Start" icon="sap-icon://restart" type="Accept" visible="true" press="onStartDB"/>  
+                <Button text="Stop" icon="sap-icon://stop" type="Reject" visible="true" press="onStopDB"/>  
+				</Toolbar>
+			</f:toolbar>
+			<f:content>
+				<Toolbar>
+					<Title text="Settings" level="H5" titleStyle="H5"/>
+					<ToolbarSpacer />
+					<Button icon="sap-icon://settings"/>
+				</Toolbar>
+				<Label text="mongod Location" />
+				<Input value="C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" />				
+				<Toolbar>
+					<Title text="mongod Status" level="H5" titleStyle="H5"/>
+					<ToolbarSpacer />
+					<Button icon="sap-icon://settings"/>
+				</Toolbar>
+				<Label text="Service State" />
+				<Input value="--DOWN--" class="stateBoxDown" />
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</mvc:View>

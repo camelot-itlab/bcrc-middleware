@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices m:DataServiceVersion="2.0"
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="com.sap.ipdci.bcrc.services"
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="BusinessPartnerType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Email" Type="Edm.String" MaxLength="255"/>
+                <NavigationProperty Name="BusinessPartnerMaterials" Relationship="com.sap.ipdci.bcrc.services.BusinessPartner_to_BusinessPartnerMaterialType" FromRole="BusinessPartnerPrincipal" ToRole="BusinessPartnerMaterialDependent"/>
+                <NavigationProperty Name="Requests" Relationship="com.sap.ipdci.bcrc.services.BusinessPartner_to_RequestType" FromRole="BusinessPartnerPrincipal" ToRole="RequestDependent"/>
+            </EntityType>
+            <EntityType Name="BusinessPartnerMaterialType">
+                <Key>
+                    <PropertyRef Name="BusinessPartnerID"/>
+                    <PropertyRef Name="MaterialID"/>
+                </Key>
+                <Property Name="BusinessPartnerID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="MaterialID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="BusinessPartner" Relationship="com.sap.ipdci.bcrc.services.BusinessPartnerMaterial_to_BusinessPartnerType" FromRole="BusinessPartnerMaterialPrincipal" ToRole="BusinessPartnerDependent"/>
+                <NavigationProperty Name="Material" Relationship="com.sap.ipdci.bcrc.services.BusinessPartnerMaterial_to_MaterialType" FromRole="BusinessPartnerMaterialPrincipal" ToRole="MaterialDependent"/>
+            </EntityType>
+            <EntityType Name="ProductFamilyType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="Materials" Relationship="com.sap.ipdci.bcrc.services.ProductFamily_to_MaterialType" FromRole="ProductFamilyPrincipal" ToRole="MaterialDependent"/>
+            </EntityType>
+            <EntityType Name="MaterialType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="255"/>
+                <Property Name="ProductFamilyID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="SupplyType" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Criticality" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Icon" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="BillOfMaterials" Relationship="com.sap.ipdci.bcrc.services.Material_to_BillOfMaterialType" FromRole="MaterialPrincipal" ToRole="BillOfMaterialDependent"/>
+                <NavigationProperty Name="MaterialUsages" Relationship="com.sap.ipdci.bcrc.services.Material_to_MaterialUsageType" FromRole="MaterialPrincipal" ToRole="MaterialUsageDependent"/>
+                <NavigationProperty Name="Compositions" Relationship="com.sap.ipdci.bcrc.services.Material_to_CompositionType" FromRole="MaterialPrincipal" ToRole="CompositionDependent"/>
+                <NavigationProperty Name="BusinessPartnerMaterials" Relationship="com.sap.ipdci.bcrc.services.Material_to_BusinessPartnerMaterialType" FromRole="MaterialPrincipal" ToRole="BusinessPartnerMaterialDependent"/>
+                <NavigationProperty Name="MaterialRegulationChanges" Relationship="com.sap.ipdci.bcrc.services.Material_to_MaterialRegulationChangeType" FromRole="MaterialPrincipal" ToRole="MaterialRegulationChangeDependent"/>
+                <NavigationProperty Name="Requests" Relationship="com.sap.ipdci.bcrc.services.Material_to_RequestType" FromRole="MaterialPrincipal" ToRole="RequestDependent"/>
+                <NavigationProperty Name="ProductFamily" Relationship="com.sap.ipdci.bcrc.services.Material_to_ProductFamilyType" FromRole="MaterialPrincipal" ToRole="ProductFamilyDependent"/>
+            </EntityType>
+            <EntityType Name="BillOfMaterialType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="MaterialID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="MaterialID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <NavigationProperty Name="Material" Relationship="com.sap.ipdci.bcrc.services.BillOfMaterial_to_MaterialType" FromRole="BillOfMaterialPrincipal" ToRole="MaterialDependent"/>
+            </EntityType>
+            <EntityType Name="MaterialUsageType">
+                <Key>
+                    <PropertyRef Name="MaterialID"/>
+                    <PropertyRef Name="RegulationID"/>
+                    <PropertyRef Name="ApplicationAreaID"/>
+                </Key>
+                <Property Name="MaterialID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="RegulationID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ApplicationAreaID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Criticality" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Icon" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="Material" Relationship="com.sap.ipdci.bcrc.services.MaterialUsage_to_MaterialType" FromRole="MaterialUsagePrincipal" ToRole="MaterialDependent"/>
+                <NavigationProperty Name="ConditionOfUse" Relationship="com.sap.ipdci.bcrc.services.MaterialUsage_to_ConditionOfUseType" FromRole="MaterialUsagePrincipal" ToRole="ConditionOfUseDependent"/>
+            </EntityType>
+            <EntityType Name="SubstanceType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CAS" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="Compositions" Relationship="com.sap.ipdci.bcrc.services.Substance_to_CompositionType" FromRole="SubstancePrincipal" ToRole="CompositionDependent"/>
+            </EntityType>
+            <EntityType Name="CompositionType">
+                <Key>
+                    <PropertyRef Name="MaterialID"/>
+                    <PropertyRef Name="SubstanceID"/>
+                </Key>
+                <Property Name="MaterialID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="SubstanceID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Type" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Precision="13" Scale="3"/>
+                <Property Name="UoM" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="Material" Relationship="com.sap.ipdci.bcrc.services.Composition_to_MaterialType" FromRole="CompositionPrincipal" ToRole="MaterialDependent"/>
+                <NavigationProperty Name="Substance" Relationship="com.sap.ipdci.bcrc.services.Composition_to_SubstanceType" FromRole="CompositionPrincipal" ToRole="SubstanceDependent"/>
+            </EntityType>
+            <EntityType Name="RegulationType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="60"/>
+                <Property Name="IsOwned" Type="Edm.String" MaxLength="1"/>
+                <NavigationProperty Name="ConditionsOfUse" Relationship="com.sap.ipdci.bcrc.services.Regulation_to_ConditionOfUseType" FromRole="RegulationPrincipal" ToRole="ConditionOfUseDependent"/>
+            </EntityType>
+            <EntityType Name="ApplicationAreaType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="60"/>
+                <NavigationProperty Name="ConditionsOfUse" Relationship="com.sap.ipdci.bcrc.services.ApplicationArea_to_ConditionOfUseType" FromRole="ApplicationAreaPrincipal" ToRole="ConditionOfUseDependent"/>
+            </EntityType>
+            <EntityType Name="ConditionOfUseType">
+                <Key>
+                    <PropertyRef Name="RegulationID"/>
+                    <PropertyRef Name="ApplicationAreaID"/>
+                </Key>
+                <Property Name="RegulationID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ApplicationAreaID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="RegulationProp" Type="Edm.String" MaxLength="60"/>
+                <Property Name="ApplicationAreaProp" Type="Edm.String" MaxLength="60"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="40"/>
+                <Property Name="LastChangeDate" Type="Edm.DateTime"/>
+                <NavigationProperty Name="RegulationChanges" Relationship="com.sap.ipdci.bcrc.services.ConditionOfUse_to_RegulationChangeType" FromRole="ConditionOfUsePrincipal" ToRole="RegulationChangeDependent"/>
+                <NavigationProperty Name="SubstanceRegulations" Relationship="com.sap.ipdci.bcrc.services.ConditionOfUse_to_SubstanceRegulationType" FromRole="ConditionOfUsePrincipal" ToRole="SubstanceRegulationDependent"/>
+                <NavigationProperty Name="MaterialUsages" Relationship="com.sap.ipdci.bcrc.services.ConditionOfUse_to_MaterialUsageType" FromRole="ConditionOfUsePrincipal" ToRole="MaterialUsageDependent"/>
+                <NavigationProperty Name="MaterialRegulationChanges" Relationship="com.sap.ipdci.bcrc.services.ConditionOfUse_to_MaterialRegulationChangeType" FromRole="ConditionOfUsePrincipal" ToRole="MaterialRegulationChangeDependent"/>
+                <NavigationProperty Name="Regulation" Relationship="com.sap.ipdci.bcrc.services.ConditionOfUse_to_RegulationType" FromRole="ConditionOfUsePrincipal" ToRole="RegulationDependent"/>
+                <NavigationProperty Name="ApplicationArea" Relationship="com.sap.ipdci.bcrc.services.ConditionOfUse_to_ApplicationAreaType" FromRole="ConditionOfUsePrincipal" ToRole="ApplicationAreaDependent"/>
+            </EntityType>
+            <EntityType Name="RegulationChangeType">
+                <Key>
+                    <PropertyRef Name="RegulationID"/>
+                    <PropertyRef Name="ApplicationAreaID"/>
+                    <PropertyRef Name="SubstanceID"/>
+                </Key>
+                <Property Name="RegulationID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ApplicationAreaID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="SubstanceID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ChangeDate" Type="Edm.DateTime"/>
+                <Property Name="ChangedBy" Type="Edm.String" MaxLength="40"/>
+                <Property Name="NewThreshold" Type="Edm.Decimal" Precision="13" Scale="3"/>
+                <Property Name="OldThreshold" Type="Edm.Decimal" Precision="13" Scale="3"/>
+                <Property Name="NewUoM" Type="Edm.String" MaxLength="5"/>
+                <Property Name="OldUoM" Type="Edm.String" MaxLength="5"/>
+                <NavigationProperty Name="ConditionOfUse" Relationship="com.sap.ipdci.bcrc.services.RegulationChange_to_ConditionOfUseType" FromRole="RegulationChangePrincipal" ToRole="ConditionOfUseDependent"/>
+                <NavigationProperty Name="Substance" Relationship="com.sap.ipdci.bcrc.services.RegulationChange_to_SubstanceType" FromRole="RegulationChangePrincipal" ToRole="SubstanceDependent"/>
+                <NavigationProperty Name="MaterialRegulationChanges" Relationship="com.sap.ipdci.bcrc.services.RegulationChange_to_MaterialRegulationChangeType" FromRole="RegulationChangePrincipal" ToRole="MaterialRegulationChangeDependent"/>
+            </EntityType>
+            <EntityType Name="MaterialRegulationChangeType">
+                <Key>
+                    <PropertyRef Name="MaterialID"/>
+                    <PropertyRef Name="RegulationID"/>
+                    <PropertyRef Name="ApplicationAreaID"/>
+                    <PropertyRef Name="SubstanceID"/>
+                </Key>
+                <Property Name="MaterialID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="RegulationID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ApplicationAreaID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="SubstanceID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="ConditionOfUse" Relationship="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_ConditionOfUseType" FromRole="MaterialRegulationChangePrincipal" ToRole="ConditionOfUseDependent"/>
+                <NavigationProperty Name="SubstanceRegulation" Relationship="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_SubstanceRegulationType" FromRole="MaterialRegulationChangePrincipal" ToRole="SubstanceRegulationDependent"/>
+                <NavigationProperty Name="RegulationChange" Relationship="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_RegulationChangeType" FromRole="MaterialRegulationChangePrincipal" ToRole="RegulationChangeDependent"/>
+                <NavigationProperty Name="Substance" Relationship="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_SubstanceType" FromRole="MaterialRegulationChangePrincipal" ToRole="SubstanceDependent"/>
+                <NavigationProperty Name="Material" Relationship="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_MaterialType" FromRole="MaterialRegulationChangePrincipal" ToRole="MaterialDependent"/>
+                <NavigationProperty Name="Request" Relationship="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_RequestType" FromRole="MaterialRegulationChangePrincipal" ToRole="RequestDependent"/>
+            </EntityType>
+            <EntityType Name="SubstanceRegulationType">
+                <Key>
+                    <PropertyRef Name="RegulationID"/>
+                    <PropertyRef Name="ApplicationAreaID"/>
+                    <PropertyRef Name="SubstanceID"/>
+                </Key>
+                <Property Name="RegulationID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ApplicationAreaID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="SubstanceID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Threshold" Type="Edm.Decimal" Precision="13" Scale="3"/>
+                <Property Name="UoM" Type="Edm.String" MaxLength="5"/>
+                <Property Name="Sign" Type="Edm.String" MaxLength="2"/>
+                <NavigationProperty Name="Substance" Relationship="com.sap.ipdci.bcrc.services.SubstanceRegulation_to_SubstanceType" FromRole="SubstanceRegulationPrincipal" ToRole="SubstanceDependent"/>
+                <NavigationProperty Name="ConditionOfUse" Relationship="com.sap.ipdci.bcrc.services.SubstanceRegulation_to_ConditionOfUseType" FromRole="SubstanceRegulationPrincipal" ToRole="ConditionOfUseDependent"/>
+                <NavigationProperty Name="MaterialRegulationChanges" Relationship="com.sap.ipdci.bcrc.services.SubstanceRegulation_to_MaterialRegulationChangeType" FromRole="SubstanceRegulationPrincipal" ToRole="MaterialRegulationChangeDependent"/>
+            </EntityType>
+            <EntityType Name="RequestType">
+                <Key>
+                    <PropertyRef Name="BusinessPartnerID"/>
+                    <PropertyRef Name="MaterialID"/>
+                    <PropertyRef Name="RegulationID"/>
+                    <PropertyRef Name="ApplicationAreaID"/>
+                    <PropertyRef Name="SubstanceID"/>
+                </Key>
+                <Property Name="BusinessPartnerID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="MaterialID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="RegulationID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="ApplicationAreaID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="SubstanceID" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="RequestStatus" Type="Edm.String" MaxLength="40"/>
+                <Property Name="RequestDate" Type="Edm.DateTime"/>
+                <Property Name="ResponseDate" Type="Edm.DateTime"/>
+                <Property Name="DueDate" Type="Edm.DateTime"/>
+                <Property Name="Inbound" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ComplianceStatus" Type="Edm.String" MaxLength="40"/>
+                <NavigationProperty Name="MaterialRegulationChange" Relationship="com.sap.ipdci.bcrc.services.Request_to_MaterialRegulationChangeType" FromRole="RequestPrincipal" ToRole="MaterialRegulationChangeDependent"/>
+                <NavigationProperty Name="RegulationChange" Relationship="com.sap.ipdci.bcrc.services.Request_to_RegulationChangeType" FromRole="RequestPrincipal" ToRole="RegulationChangeDependent"/>
+                <NavigationProperty Name="Substance" Relationship="com.sap.ipdci.bcrc.services.Request_to_SubstanceType" FromRole="RequestPrincipal" ToRole="SubstanceDependent"/>
+                <NavigationProperty Name="Material" Relationship="com.sap.ipdci.bcrc.services.Request_to_MaterialType" FromRole="RequestPrincipal" ToRole="MaterialDependent"/>
+                <NavigationProperty Name="BusinessPartner" Relationship="com.sap.ipdci.bcrc.services.Request_to_BusinessPartnerType" FromRole="RequestPrincipal" ToRole="BusinessPartnerDependent"/>
+            </EntityType>
+            <EntityType Name="RequestAppAreaType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="Description" Type="Edm.String" MaxLength="60"/>
+                <Property Name="ID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Inbound" Type="Edm.String" MaxLength="1"/>
+                <Property Name="Count" Type="Edm.Int32"/>
+            </EntityType>
+            <EntityType Name="RequestQueryType">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="2147483647"/>
+                <Property Name="BusinessPartnerID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="MaterialID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="RegulationID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ApplicationAreaID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="SubstanceID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="RequestStatus" Type="Edm.String" MaxLength="40"/>
+                <Property Name="RequestDate" Type="Edm.DateTime"/>
+                <Property Name="ResponseDate" Type="Edm.DateTime"/>
+                <Property Name="DueDate" Type="Edm.DateTime"/>
+                <Property Name="Inbound" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ComplianceStatus" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ApplicationAreaDescription" Type="Edm.String" MaxLength="60"/>
+                <Property Name="RegulationName" Type="Edm.String" MaxLength="60"/>
+                <Property Name="IsOwned" Type="Edm.String" MaxLength="1"/>
+                <Property Name="BusinessPartnerName" Type="Edm.String" MaxLength="40"/>
+                <Property Name="BusinessPartnerEmail" Type="Edm.String" MaxLength="255"/>
+                <Property Name="BusinessPartnerMaterialStatus" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="255"/>
+                <Property Name="ProductFamilyID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="SupplyType" Type="Edm.String" MaxLength="40"/>
+                <Property Name="MaterialStatus" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Criticality" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Icon" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ProductFamilyName" Type="Edm.String" MaxLength="40"/>
+                <Property Name="CAS" Type="Edm.String" MaxLength="40"/>
+                <Property Name="SubstanceName" Type="Edm.String" MaxLength="40"/>
+                <Property Name="RequestCount" Type="Edm.Int32"/>
+                <Property Name="MaterialCount" Type="Edm.Int32"/>
+            </EntityType>
+            <Association Name="BusinessPartner_to_BusinessPartnerMaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerType" Role="BusinessPartnerPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType" Role="BusinessPartnerMaterialDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="BusinessPartner_to_RequestType">
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerType" Role="BusinessPartnerPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="BusinessPartnerMaterial_to_BusinessPartnerType">
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType" Role="BusinessPartnerMaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerType" Role="BusinessPartnerDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="BusinessPartnerMaterial_to_MaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType" Role="BusinessPartnerMaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="ProductFamily_to_MaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.ProductFamilyType" Role="ProductFamilyPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="Material_to_ProductFamilyType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ProductFamilyType" Role="ProductFamilyDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Material_to_BillOfMaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.BillOfMaterialType" Role="BillOfMaterialDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="BillOfMaterial_to_MaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.BillOfMaterialType" Role="BillOfMaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Material_to_MaterialUsageType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialUsageType" Role="MaterialUsageDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="Material_to_CompositionType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.CompositionType" Role="CompositionDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="Material_to_BusinessPartnerMaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType" Role="BusinessPartnerMaterialDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="Material_to_MaterialRegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangeDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="Material_to_RequestType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="MaterialUsage_to_MaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialUsageType" Role="MaterialUsagePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="MaterialUsage_to_ConditionOfUseType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialUsageType" Role="MaterialUsagePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUseDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Substance_to_CompositionType">
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceType" Role="SubstancePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.CompositionType" Role="CompositionDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="Composition_to_MaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.CompositionType" Role="CompositionPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Composition_to_SubstanceType">
+                <End Type="com.sap.ipdci.bcrc.services.CompositionType" Role="CompositionPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceType" Role="SubstanceDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Regulation_to_ConditionOfUseType">
+                <End Type="com.sap.ipdci.bcrc.services.RegulationType" Role="RegulationPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUseDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="ApplicationArea_to_ConditionOfUseType">
+                <End Type="com.sap.ipdci.bcrc.services.ApplicationAreaType" Role="ApplicationAreaPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUseDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="ConditionOfUse_to_RegulationType">
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUsePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.RegulationType" Role="RegulationDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="ConditionOfUse_to_ApplicationAreaType">
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUsePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ApplicationAreaType" Role="ApplicationAreaDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="ConditionOfUse_to_RegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUsePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.RegulationChangeType" Role="RegulationChangeDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="ConditionOfUse_to_SubstanceRegulationType">
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUsePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceRegulationType" Role="SubstanceRegulationDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="ConditionOfUse_to_MaterialUsageType">
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUsePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialUsageType" Role="MaterialUsageDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="ConditionOfUse_to_MaterialRegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUsePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangeDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="RegulationChange_to_ConditionOfUseType">
+                <End Type="com.sap.ipdci.bcrc.services.RegulationChangeType" Role="RegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUseDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="RegulationChange_to_SubstanceType">
+                <End Type="com.sap.ipdci.bcrc.services.RegulationChangeType" Role="RegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceType" Role="SubstanceDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="RegulationChange_to_MaterialRegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.RegulationChangeType" Role="RegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangeDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="MaterialRegulationChange_to_ConditionOfUseType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUseDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="MaterialRegulationChange_to_SubstanceRegulationType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceRegulationType" Role="SubstanceRegulationDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="MaterialRegulationChange_to_RegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.RegulationChangeType" Role="RegulationChangeDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="MaterialRegulationChange_to_SubstanceType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceType" Role="SubstanceDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="MaterialRegulationChange_to_MaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="MaterialRegulationChange_to_RequestType">
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangePrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="SubstanceRegulation_to_SubstanceType">
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceRegulationType" Role="SubstanceRegulationPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceType" Role="SubstanceDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="SubstanceRegulation_to_ConditionOfUseType">
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceRegulationType" Role="SubstanceRegulationPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.ConditionOfUseType" Role="ConditionOfUseDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="SubstanceRegulation_to_MaterialRegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceRegulationType" Role="SubstanceRegulationPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangeDependent" Multiplicity="*"/>
+            </Association>
+            <Association Name="Request_to_MaterialRegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType" Role="MaterialRegulationChangeDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Request_to_RegulationChangeType">
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.RegulationChangeType" Role="RegulationChangeDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Request_to_SubstanceType">
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.SubstanceType" Role="SubstanceDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Request_to_MaterialType">
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.MaterialType" Role="MaterialDependent" Multiplicity="1"/>
+            </Association>
+            <Association Name="Request_to_BusinessPartnerType">
+                <End Type="com.sap.ipdci.bcrc.services.RequestType" Role="RequestPrincipal" Multiplicity="1"/>
+                <End Type="com.sap.ipdci.bcrc.services.BusinessPartnerType" Role="BusinessPartnerDependent" Multiplicity="1"/>
+            </Association>
+            <EntityContainer Name="v2" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="BusinessPartner" EntityType="com.sap.ipdci.bcrc.services.BusinessPartnerType"/>
+                <EntitySet Name="BusinessPartnerMaterial" EntityType="com.sap.ipdci.bcrc.services.BusinessPartnerMaterialType"/>
+                <EntitySet Name="ProductFamily" EntityType="com.sap.ipdci.bcrc.services.ProductFamilyType"/>
+                <EntitySet Name="Material" EntityType="com.sap.ipdci.bcrc.services.MaterialType"/>
+                <EntitySet Name="BillOfMaterial" EntityType="com.sap.ipdci.bcrc.services.BillOfMaterialType"/>
+                <EntitySet Name="MaterialUsage" EntityType="com.sap.ipdci.bcrc.services.MaterialUsageType"/>
+                <EntitySet Name="Substance" EntityType="com.sap.ipdci.bcrc.services.SubstanceType"/>
+                <EntitySet Name="Composition" EntityType="com.sap.ipdci.bcrc.services.CompositionType"/>
+                <EntitySet Name="Regulation" EntityType="com.sap.ipdci.bcrc.services.RegulationType"/>
+                <EntitySet Name="ApplicationArea" EntityType="com.sap.ipdci.bcrc.services.ApplicationAreaType"/>
+                <EntitySet Name="ConditionOfUse" EntityType="com.sap.ipdci.bcrc.services.ConditionOfUseType"/>
+                <EntitySet Name="RegulationChange" EntityType="com.sap.ipdci.bcrc.services.RegulationChangeType"/>
+                <EntitySet Name="MaterialRegulationChange" EntityType="com.sap.ipdci.bcrc.services.MaterialRegulationChangeType"/>
+                <EntitySet Name="SubstanceRegulation" EntityType="com.sap.ipdci.bcrc.services.SubstanceRegulationType"/>
+                <EntitySet Name="Request" EntityType="com.sap.ipdci.bcrc.services.RequestType"/>
+                <EntitySet Name="RequestAppArea" EntityType="com.sap.ipdci.bcrc.services.RequestAppAreaType"/>
+                <EntitySet Name="RequestQuery" EntityType="com.sap.ipdci.bcrc.services.RequestQueryType"/>
+                <AssociationSet Name="BusinessPartner_to_BusinessPartnerMaterial" Association="com.sap.ipdci.bcrc.services.BusinessPartner_to_BusinessPartnerMaterialType">
+                    <End Role="BusinessPartnerPrincipal" EntitySet="BusinessPartner"/>
+                    <End Role="BusinessPartnerMaterialDependent" EntitySet="BusinessPartnerMaterial"/>
+                </AssociationSet>
+                <AssociationSet Name="BusinessPartner_to_Request" Association="com.sap.ipdci.bcrc.services.BusinessPartner_to_RequestType">
+                    <End Role="BusinessPartnerPrincipal" EntitySet="BusinessPartner"/>
+                    <End Role="RequestDependent" EntitySet="Request"/>
+                </AssociationSet>
+                <AssociationSet Name="BusinessPartnerMaterial_to_BusinessPartner" Association="com.sap.ipdci.bcrc.services.BusinessPartnerMaterial_to_BusinessPartnerType">
+                    <End Role="BusinessPartnerMaterialPrincipal" EntitySet="BusinessPartnerMaterial"/>
+                    <End Role="BusinessPartnerDependent" EntitySet="BusinessPartner"/>
+                </AssociationSet>
+                <AssociationSet Name="BusinessPartnerMaterial_to_Material" Association="com.sap.ipdci.bcrc.services.BusinessPartnerMaterial_to_MaterialType">
+                    <End Role="BusinessPartnerMaterialPrincipal" EntitySet="BusinessPartnerMaterial"/>
+                    <End Role="MaterialDependent" EntitySet="Material"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductFamily_to_Material" Association="com.sap.ipdci.bcrc.services.ProductFamily_to_MaterialType">
+                    <End Role="ProductFamilyPrincipal" EntitySet="ProductFamily"/>
+                    <End Role="MaterialDependent" EntitySet="Material"/>
+                </AssociationSet>
+                <AssociationSet Name="Material_to_ProductFamily" Association="com.sap.ipdci.bcrc.services.Material_to_ProductFamilyType">
+                    <End Role="MaterialPrincipal" EntitySet="Material"/>
+                    <End Role="ProductFamilyDependent" EntitySet="ProductFamily"/>
+                </AssociationSet>
+                <AssociationSet Name="Material_to_BillOfMaterial" Association="com.sap.ipdci.bcrc.services.Material_to_BillOfMaterialType">
+                    <End Role="MaterialPrincipal" EntitySet="Material"/>
+                    <End Role="BillOfMaterialDependent" EntitySet="BillOfMaterial"/>
+                </AssociationSet>
+                <AssociationSet Name="BillOfMaterial_to_Material" Association="com.sap.ipdci.bcrc.services.BillOfMaterial_to_MaterialType">
+                    <End Role="BillOfMaterialPrincipal" EntitySet="BillOfMaterial"/>
+                    <End Role="MaterialDependent" EntitySet="Material"/>
+                </AssociationSet>
+                <AssociationSet Name="Material_to_MaterialUsage" Association="com.sap.ipdci.bcrc.services.Material_to_MaterialUsageType">
+                    <End Role="MaterialPrincipal" EntitySet="Material"/>
+                    <End Role="MaterialUsageDependent" EntitySet="MaterialUsage"/>
+                </AssociationSet>
+                <AssociationSet Name="Material_to_Composition" Association="com.sap.ipdci.bcrc.services.Material_to_CompositionType">
+                    <End Role="MaterialPrincipal" EntitySet="Material"/>
+                    <End Role="CompositionDependent" EntitySet="Composition"/>
+                </AssociationSet>
+                <AssociationSet Name="Material_to_BusinessPartnerMaterial" Association="com.sap.ipdci.bcrc.services.Material_to_BusinessPartnerMaterialType">
+                    <End Role="MaterialPrincipal" EntitySet="Material"/>
+                    <End Role="BusinessPartnerMaterialDependent" EntitySet="BusinessPartnerMaterial"/>
+                </AssociationSet>
+                <AssociationSet Name="Material_to_MaterialRegulationChange" Association="com.sap.ipdci.bcrc.services.Material_to_MaterialRegulationChangeType">
+                    <End Role="MaterialPrincipal" EntitySet="Material"/>
+                    <End Role="MaterialRegulationChangeDependent" EntitySet="MaterialRegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="Material_to_Request" Association="com.sap.ipdci.bcrc.services.Material_to_RequestType">
+                    <End Role="MaterialPrincipal" EntitySet="Material"/>
+                    <End Role="RequestDependent" EntitySet="Request"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialUsage_to_Material" Association="com.sap.ipdci.bcrc.services.MaterialUsage_to_MaterialType">
+                    <End Role="MaterialUsagePrincipal" EntitySet="MaterialUsage"/>
+                    <End Role="MaterialDependent" EntitySet="Material"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialUsage_to_ConditionOfUse" Association="com.sap.ipdci.bcrc.services.MaterialUsage_to_ConditionOfUseType">
+                    <End Role="MaterialUsagePrincipal" EntitySet="MaterialUsage"/>
+                    <End Role="ConditionOfUseDependent" EntitySet="ConditionOfUse"/>
+                </AssociationSet>
+                <AssociationSet Name="Substance_to_Composition" Association="com.sap.ipdci.bcrc.services.Substance_to_CompositionType">
+                    <End Role="SubstancePrincipal" EntitySet="Substance"/>
+                    <End Role="CompositionDependent" EntitySet="Composition"/>
+                </AssociationSet>
+                <AssociationSet Name="Composition_to_Material" Association="com.sap.ipdci.bcrc.services.Composition_to_MaterialType">
+                    <End Role="CompositionPrincipal" EntitySet="Composition"/>
+                    <End Role="MaterialDependent" EntitySet="Material"/>
+                </AssociationSet>
+                <AssociationSet Name="Composition_to_Substance" Association="com.sap.ipdci.bcrc.services.Composition_to_SubstanceType">
+                    <End Role="CompositionPrincipal" EntitySet="Composition"/>
+                    <End Role="SubstanceDependent" EntitySet="Substance"/>
+                </AssociationSet>
+                <AssociationSet Name="Regulation_to_ConditionOfUse" Association="com.sap.ipdci.bcrc.services.Regulation_to_ConditionOfUseType">
+                    <End Role="RegulationPrincipal" EntitySet="Regulation"/>
+                    <End Role="ConditionOfUseDependent" EntitySet="ConditionOfUse"/>
+                </AssociationSet>
+                <AssociationSet Name="ApplicationArea_to_ConditionOfUse" Association="com.sap.ipdci.bcrc.services.ApplicationArea_to_ConditionOfUseType">
+                    <End Role="ApplicationAreaPrincipal" EntitySet="ApplicationArea"/>
+                    <End Role="ConditionOfUseDependent" EntitySet="ConditionOfUse"/>
+                </AssociationSet>
+                <AssociationSet Name="ConditionOfUse_to_Regulation" Association="com.sap.ipdci.bcrc.services.ConditionOfUse_to_RegulationType">
+                    <End Role="ConditionOfUsePrincipal" EntitySet="ConditionOfUse"/>
+                    <End Role="RegulationDependent" EntitySet="Regulation"/>
+                </AssociationSet>
+                <AssociationSet Name="ConditionOfUse_to_ApplicationArea" Association="com.sap.ipdci.bcrc.services.ConditionOfUse_to_ApplicationAreaType">
+                    <End Role="ConditionOfUsePrincipal" EntitySet="ConditionOfUse"/>
+                    <End Role="ApplicationAreaDependent" EntitySet="ApplicationArea"/>
+                </AssociationSet>
+                <AssociationSet Name="ConditionOfUse_to_RegulationChange" Association="com.sap.ipdci.bcrc.services.ConditionOfUse_to_RegulationChangeType">
+                    <End Role="ConditionOfUsePrincipal" EntitySet="ConditionOfUse"/>
+                    <End Role="RegulationChangeDependent" EntitySet="RegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="ConditionOfUse_to_SubstanceRegulation" Association="com.sap.ipdci.bcrc.services.ConditionOfUse_to_SubstanceRegulationType">
+                    <End Role="ConditionOfUsePrincipal" EntitySet="ConditionOfUse"/>
+                    <End Role="SubstanceRegulationDependent" EntitySet="SubstanceRegulation"/>
+                </AssociationSet>
+                <AssociationSet Name="ConditionOfUse_to_MaterialUsage" Association="com.sap.ipdci.bcrc.services.ConditionOfUse_to_MaterialUsageType">
+                    <End Role="ConditionOfUsePrincipal" EntitySet="ConditionOfUse"/>
+                    <End Role="MaterialUsageDependent" EntitySet="MaterialUsage"/>
+                </AssociationSet>
+                <AssociationSet Name="ConditionOfUse_to_MaterialRegulationChange" Association="com.sap.ipdci.bcrc.services.ConditionOfUse_to_MaterialRegulationChangeType">
+                    <End Role="ConditionOfUsePrincipal" EntitySet="ConditionOfUse"/>
+                    <End Role="MaterialRegulationChangeDependent" EntitySet="MaterialRegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="RegulationChange_to_ConditionOfUse" Association="com.sap.ipdci.bcrc.services.RegulationChange_to_ConditionOfUseType">
+                    <End Role="RegulationChangePrincipal" EntitySet="RegulationChange"/>
+                    <End Role="ConditionOfUseDependent" EntitySet="ConditionOfUse"/>
+                </AssociationSet>
+                <AssociationSet Name="RegulationChange_to_Substance" Association="com.sap.ipdci.bcrc.services.RegulationChange_to_SubstanceType">
+                    <End Role="RegulationChangePrincipal" EntitySet="RegulationChange"/>
+                    <End Role="SubstanceDependent" EntitySet="Substance"/>
+                </AssociationSet>
+                <AssociationSet Name="RegulationChange_to_MaterialRegulationChange" Association="com.sap.ipdci.bcrc.services.RegulationChange_to_MaterialRegulationChangeType">
+                    <End Role="RegulationChangePrincipal" EntitySet="RegulationChange"/>
+                    <End Role="MaterialRegulationChangeDependent" EntitySet="MaterialRegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialRegulationChange_to_ConditionOfUse" Association="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_ConditionOfUseType">
+                    <End Role="MaterialRegulationChangePrincipal" EntitySet="MaterialRegulationChange"/>
+                    <End Role="ConditionOfUseDependent" EntitySet="ConditionOfUse"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialRegulationChange_to_SubstanceRegulation" Association="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_SubstanceRegulationType">
+                    <End Role="MaterialRegulationChangePrincipal" EntitySet="MaterialRegulationChange"/>
+                    <End Role="SubstanceRegulationDependent" EntitySet="SubstanceRegulation"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialRegulationChange_to_RegulationChange" Association="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_RegulationChangeType">
+                    <End Role="MaterialRegulationChangePrincipal" EntitySet="MaterialRegulationChange"/>
+                    <End Role="RegulationChangeDependent" EntitySet="RegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialRegulationChange_to_Substance" Association="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_SubstanceType">
+                    <End Role="MaterialRegulationChangePrincipal" EntitySet="MaterialRegulationChange"/>
+                    <End Role="SubstanceDependent" EntitySet="Substance"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialRegulationChange_to_Material" Association="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_MaterialType">
+                    <End Role="MaterialRegulationChangePrincipal" EntitySet="MaterialRegulationChange"/>
+                    <End Role="MaterialDependent" EntitySet="Material"/>
+                </AssociationSet>
+                <AssociationSet Name="MaterialRegulationChange_to_Request" Association="com.sap.ipdci.bcrc.services.MaterialRegulationChange_to_RequestType">
+                    <End Role="MaterialRegulationChangePrincipal" EntitySet="MaterialRegulationChange"/>
+                    <End Role="RequestDependent" EntitySet="Request"/>
+                </AssociationSet>
+                <AssociationSet Name="SubstanceRegulation_to_Substance" Association="com.sap.ipdci.bcrc.services.SubstanceRegulation_to_SubstanceType">
+                    <End Role="SubstanceRegulationPrincipal" EntitySet="SubstanceRegulation"/>
+                    <End Role="SubstanceDependent" EntitySet="Substance"/>
+                </AssociationSet>
+                <AssociationSet Name="SubstanceRegulation_to_ConditionOfUse" Association="com.sap.ipdci.bcrc.services.SubstanceRegulation_to_ConditionOfUseType">
+                    <End Role="SubstanceRegulationPrincipal" EntitySet="SubstanceRegulation"/>
+                    <End Role="ConditionOfUseDependent" EntitySet="ConditionOfUse"/>
+                </AssociationSet>
+                <AssociationSet Name="SubstanceRegulation_to_MaterialRegulationChange" Association="com.sap.ipdci.bcrc.services.SubstanceRegulation_to_MaterialRegulationChangeType">
+                    <End Role="SubstanceRegulationPrincipal" EntitySet="SubstanceRegulation"/>
+                    <End Role="MaterialRegulationChangeDependent" EntitySet="MaterialRegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="Request_to_MaterialRegulationChange" Association="com.sap.ipdci.bcrc.services.Request_to_MaterialRegulationChangeType">
+                    <End Role="RequestPrincipal" EntitySet="Request"/>
+                    <End Role="MaterialRegulationChangeDependent" EntitySet="MaterialRegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="Request_to_RegulationChange" Association="com.sap.ipdci.bcrc.services.Request_to_RegulationChangeType">
+                    <End Role="RequestPrincipal" EntitySet="Request"/>
+                    <End Role="RegulationChangeDependent" EntitySet="RegulationChange"/>
+                </AssociationSet>
+                <AssociationSet Name="Request_to_Substance" Association="com.sap.ipdci.bcrc.services.Request_to_SubstanceType">
+                    <End Role="RequestPrincipal" EntitySet="Request"/>
+                    <End Role="SubstanceDependent" EntitySet="Substance"/>
+                </AssociationSet>
+                <AssociationSet Name="Request_to_Material" Association="com.sap.ipdci.bcrc.services.Request_to_MaterialType">
+                    <End Role="RequestPrincipal" EntitySet="Request"/>
+                    <End Role="MaterialDependent" EntitySet="Material"/>
+                </AssociationSet>
+                <AssociationSet Name="Request_to_BusinessPartner" Association="com.sap.ipdci.bcrc.services.Request_to_BusinessPartnerType">
+                    <End Role="RequestPrincipal" EntitySet="Request"/>
+                    <End Role="BusinessPartnerDependent" EntitySet="BusinessPartner"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

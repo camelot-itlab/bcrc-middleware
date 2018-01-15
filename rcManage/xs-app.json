@@ -1,0 +1,20 @@
+{
+	"welcomeFile": "/resources/webapp/index.html",
+	"authenticationMethod": "none",
+	"routes": [{
+		"source": "/resources/(.*)",
+		"target": "$1",
+		"localDir": "resources/",
+		"replace": {
+			"pathSuffixes": [
+				"index.html"
+			],
+			"vars": [
+				"sapui5url"
+			]
+		}
+	}, {
+		"source": "/bcrc/xsodata/(.*)",
+		"destination": "bcrc-core-js"
+	}]
+}

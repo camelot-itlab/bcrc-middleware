@@ -1,0 +1,97 @@
+{
+	"d": {
+		"results": [{
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=1)",
+				"type": "com.sap.ipdci.bcrc.services.RegulationChangeType"
+			},
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "CHILD",
+			"SubstanceID": "0000077-92-9",
+			"RegulationChangeNo": 1,
+			"ComplianceStatus": "PRES",
+			"ChangeDate": "/Date(1509494400000)/",
+			"ChangedBy": "Michael Jung",
+			"NewThreshold": "1.500",
+			"OldThreshold": "2.000",
+			"NewUoM": "%",
+			"OldUoM": "%",
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=1)/ComplianceStatusEntity"
+				}
+			},
+			"ConditionOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=1)/ConditionOfUse"
+				}
+			},
+			"Substance": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=1)/Substance"
+				}
+			},
+			"SubstanceRegulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=1)/SubstanceRegulation"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=1)/MaterialRegulationChanges"
+				}
+			},
+			"Request": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=1)/Request"
+				}
+			}
+		}, {
+			"__metadata": {
+				"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=2)",
+				"type": "com.sap.ipdci.bcrc.services.RegulationChangeType"
+			},
+			"RegulationID": "EUR",
+			"ApplicationAreaID": "CHILD",
+			"SubstanceID": "0000077-92-9",
+			"RegulationChangeNo": 2,
+			"ComplianceStatus": "BT",
+			"ChangeDate": "/Date(1504224000000)/",
+			"ChangedBy": "Michael Jung",
+			"NewThreshold": "2.000",
+			"OldThreshold": null,
+			"NewUoM": "%",
+			"OldUoM": null,
+			"ComplianceStatusEntity": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=2)/ComplianceStatusEntity"
+				}
+			},
+			"ConditionOfUse": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=2)/ConditionOfUse"
+				}
+			},
+			"Substance": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=2)/Substance"
+				}
+			},
+			"SubstanceRegulation": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=2)/SubstanceRegulation"
+				}
+			},
+			"MaterialRegulationChanges": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=2)/MaterialRegulationChanges"
+				}
+			},
+			"Request": {
+				"__deferred": {
+					"uri": "https://c5227884trial-trial-test-bcrc-site-web.cfapps.eu10.hana.ondemand.com/bcrc/xsodata/bcrc.xsodata/RegulationChange(RegulationID='EUR',ApplicationAreaID='CHILD',SubstanceID='0000077-92-9',RegulationChangeNo=2)/Request"
+				}
+			}
+		}]
+	}
+}

@@ -1,0 +1,206 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="camelot.smartcontract.administration.controller.Network" 
+    xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page title="" showHeader="false" enableScrolling="false">
+		<content>
+			<IconTabBar expandable="false" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true"
+				selectedKey="{viewModel>/selectedTab}" select="onTabSelect">
+				<items>
+					<IconTabFilter key="CreateCustomGenesisTab" icon="sap-icon://add-coursebook" iconColor="Default" text="" count="" design="Vertical" showAll="false"
+						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+						<content>
+							<form:Form width="100%" visible="true">
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>											
+											<form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/ExtraData}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement>
+											<form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/Nonce}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Nonce" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement>
+                                            <form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/MixHash}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Mix Hash" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement><form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/Difficulty}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Difficulty" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement><form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/Alloc/Account}"/>	
+                                                    <Input type="Text" value="{customGenesisModel>/Alloc/Balance}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Alloc" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement><form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/Coinbase}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Coinbase" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement><form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/Timestamp}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Timestamp" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement><form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/ParentHash}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Parent Hash" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement><form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Text" value="{customGenesisModel>/GasLimit}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Gas Limit" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+											</form:FormElement>																					
+										</form:formElements>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout columnsM="1" columnsL="2" emptySpanL="0" emptySpanM="0" emptySpanS="0" visible="true" labelSpanS="12"
+										labelSpanM="2" labelSpanL="4"/>
+								</form:layout>
+								<form:title>
+									<core:Title text="Create custom genesis file" level="Auto"/>
+								</form:title>
+							</form:Form>
+						</content>
+					</IconTabFilter>
+					<IconTabSeparator icon="sap-icon://open-command-field" iconDensityAware="false"/>
+					<IconTabFilter key="NetworkTab" icon="sap-icon://share" iconColor="Neutral" text="" count="" design="Vertical" showAll="false" textDirection="Inherit"
+						enabled="true" visible="true" iconDensityAware="false">
+						 <content>
+							<form:Form width="100%" visible="true">
+								<form:formContainers>
+									<form:FormContainer visible="true">
+										<form:formElements>											
+                                            <form:FormElement visible="true">
+												<form:fields>
+                                                    <Input type="Number" value="{configModel>/numberOfNodes}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Number of nodes" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:fields>
+                                                    <Input type="Number" value="{configModel>/startNode}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Start Node" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:fields>
+                                                    <Input type="Number" value="{configModel>/basePort}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Base Port" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:fields>
+                                                    <Input type="Number" value="{configModel>/baseRPCPort}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Base RPC Port" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:fields>                                                   
+                                                    <ComboBox items="{ path: 'genesisBlocksModel>/', sorter: { path: 'ExtraData' } }"
+                                                        selectedKey="{configModel>/genesisBlockId}">
+                                                        <core:Item key="{genesisBlocksModel>id}" text="{genesisBlocksModel>ExtraData}" />
+                                                    </ComboBox>
+												</form:fields>
+												<form:label>
+													<Label text="Genesis Block" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:fields>
+                                                    <Input type="String" value="{configModel>/networkId}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Network ID" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+                                            <form:FormElement visible="{ path: 'viewModel>/selectedMenu', formatter: '.setBootURLVisibility' }">
+                                                <form:fields>
+                                                    <Input type="String" value="{configModel>/bootUrl}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Boot URL" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+                                            <form:FormElement>
+                                                <form:fields>
+                                                    <Input type="Password" value="{configModel>/password}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Password for Default Account" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>
+											<form:FormElement visible="{ path: 'viewModel>/selectedMenu', formatter: '.setDefaultAccountVisibility' }">
+                                                <form:fields>
+                                                    <CheckBox selected="{configModel>/defaultNode}"/>													
+												</form:fields>
+												<form:label>
+													<Label text="Set as Default Account" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+												</form:label>
+                                            </form:FormElement>																	
+										</form:formElements>
+									</form:FormContainer>
+								</form:formContainers>
+								<form:layout>
+									<form:ResponsiveGridLayout columnsM="1" columnsL="2" emptySpanL="0" emptySpanM="0" emptySpanS="0" visible="true" labelSpanS="12"
+										labelSpanM="2" labelSpanL="4"/>
+								</form:layout>
+								<form:title>
+									<core:Title text="Specify configuration values" level="Auto"/>
+								</form:title>
+							</form:Form>
+						</content>	
+					</IconTabFilter>
+				</items>
+				<content/>
+			</IconTabBar>
+		</content>		
+		<subHeader>
+			<Toolbar>
+                <Title text="{viewModel>/title}"/>
+				<ToolbarSpacer/>                	
+				<Button text="Delete" visible="false"/>  
+				<Button text="Save" type="Accept" visible="{ path: 'viewModel>/selectedTab', formatter: '.setGBSaveVisibility' }" press="onCustomGenesisSave"/>
+                <Button text="Start with Genesis Init." type="Accept" visible="{ path: 'viewModel>/', formatter: '.setNetworksStartWithGenesisVisibility' }" press="onExtendWithGenesis"/>
+                <Button text="Start" type="Accept" visible="{ path: 'viewModel>/selectedTab', formatter: '.setNetworksStartVisibility' }" press="onExtendWithoutGenesis"/>
+			</Toolbar>
+		</subHeader>
+	</Page>
+</mvc:View>

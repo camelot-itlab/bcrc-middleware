@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="camelot.smartcontract.administration.controller.AddApplication" xmlns:m="sap.m"
+	xmlns:form="sap.ui.layout.form">
+	<m:Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Add Application" type="Standard"
+		verticalScrolling="true">
+		<m:content>
+			<form:SimpleForm minWidth="-1" maxContainerCols="2" layout="ResponsiveGridLayout" editable="false" visible="true">
+				<form:content>
+					<m:Label text="Application Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+					<m:Input value="{/application/AppName}" type="Text" showValueHelp="false" editable="true" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+					<m:Label text="Technical Application Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+					<m:Input value="{/application/TechnicalAppName}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+					<m:Label text="Version" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+					<m:Input value="{/application/Version}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+				</form:content>
+				<form:title/>
+			</form:SimpleForm>
+		</m:content>
+		<m:beginButton/>
+		<m:buttons>
+			<m:Button text="{/actionType}" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onBtnAdd"/>
+			<m:Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="onBtnCancel"/>
+		</m:buttons>
+		<m:customHeader/>
+		<m:endButton/>
+		<m:subHeader/>
+	</m:Dialog>
+</mvc:View>

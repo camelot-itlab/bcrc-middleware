@@ -1,0 +1,64 @@
+<mvc:View
+	controllerName="camelot.smartcontract.administration.controller.RunningBaasInstances"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Table inset="false" mode="SingleSelectLeft" selectionChange="onNodeSelectionChange" noDataText="No existing instances"
+		items="{
+			path: 'baasInstancesModel>/',
+			sorter: {
+				path: 'InstanceName'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="BaaS Instances" level="H2"/>
+                <ToolbarSpacer/>                	
+                <Button text="Add Service Instance" icon="sap-icon://add" type="Accept" visible="true" press="openAddBaasInstanceDialog"/>
+				<Button text="Connect" icon="sap-icon://restart" type="Accept" visible="true" press="onConnectInstance"/>  
+                <Button text="Disconnect" icon="sap-icon://stop" type="Reject" visible="true" press="onDisconnectInstance"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="10%">
+				<Text text="Instance Name" />
+			</Column>
+			<Column
+				width="auto"
+				demandPopin="true">
+				<Text text="URL" />
+            </Column>
+            <Column
+				width="auto"
+				demandPopin="true">
+				<Text text="API Key" />
+            </Column>
+            <Column
+				width="auto"
+				demandPopin="true">
+				<Text text="Default Instance" />
+            </Column>
+            <Column
+				width="10%"
+				demandPopin="true">
+				<Text text="Status" />
+            </Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{baasInstancesModel>InstanceName}"/>
+					<Text
+						text="{baasInstancesModel>URL}"/>
+                    <Text
+						text="{baasInstancesModel>ApiKey}"/>
+					<CheckBox
+						selected="{baasInstancesModel>DefaultInstance}" select="onDefaultInstanceSelect"/>						
+                    <ObjectStatus text="{ path: 'running', formatter: '.formatRunningStateText' }" state="{ path: 'running', formatter: '.checkRunningState' }"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>

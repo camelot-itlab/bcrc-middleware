@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # sap-plm-regulcomp-nodejs
 
@@ -70,7 +69,4 @@ cf deploy -i 11732735 -a abort
 
 To undeploy and delete all its services run the command: 
 cf undeploy |ID from .yaml|
-=======
-# bcrc-middleware
-SAP FDA Regulated Compunds
->>>>>>> refs/remotes/origin/master
+
